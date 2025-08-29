@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Asignación de Características Musicales con IA para Ambientación Comercial} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -16,21 +16,21 @@
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Ing. Carlos Alberto Rivas Araque}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
+\director{Ing. Esp. Martín Moreyra}
+\pertenenciaDirector{GatekeeperX} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Carolina Arbelaez}
+\empresaCliente{Plusyc Live SAS}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{26 de agosto de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{14 de octubre de 2025} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{20 de junio de 2025}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -59,7 +59,7 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
+1      & Se completa hasta el punto 5 inclusive                & {9} de {septiembre} de 2025 \\ \hline
 %2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en {la implementación de un sistema de generación de características musicales a partir de canciones en el contexto de una aplicación de ambientación musical}. El trabajo tendrá un presupuesto preliminar estimado de {600} horas y un costo estimado de {18750 dólares estadounidenses}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,26 +106,35 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+%\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+%El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+%Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+%Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
+%\begin{itemize}
+%	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
+%	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
+%	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
+%	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
+%	\item ¿En qué estado del ciclo de vida está la solución que se propone?
+%	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
+%	\item ¿Por dónde pasa la innovación?
+%\end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+El proyecto se hace para la empresa Plusyc Live SAS, dedicada a la creación de experiencias musicales personalizadas para locales comerciales a través de una aplicación móvil. La app hace uso de un pool de canciones propio y un backend que organiza la música según ciertos criterios definidos para cada comercio, y las características musicales asociadas a las canciones, tales como el estilo o ánimo, energía y tempo de la música, entre otros. La asignación de dichas características a las canciones actualmente depende del acceso a APIs de terceros, lo que genera restricciones de disponibilidad y costos, y esto afecta la escalabilidad y autonomía del sistema y finalmente la calidad de la experiencia ofrecida a los clientes.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Proponemos el desarrollo de un sistema de inteligencia artificial que reciba como entrada canciones y genere como salida sus características musicales. A partir de técnicas y representaciones numéricas del sonido, vamos a entrenar modelos de aprendizaje supervisado y aprendizaje profundo, aprovechando fuentes de datos privadas de la empresa y datos públicos disponibles, y podremos inferir los atributos de cada nueva canción sin depender de proveedores externos.
+
+En el ámbito de la inteligencia artificial aplicada a la música, existen herramientas que permiten extraer información musical a bajo nivel, y herramientas en línea que permiten extraer algunas características específicas. Sin embargo, no se cuenta con una solución que genere resultados completos y resuelva el problema de la disponibilidad.
+
+La propuesta de valor radica en otorgar a Plusyc Live SAS una solución completa, integrada y altamente disponible, en pro de la escalabilidad y la independencia tecnológica. Los comercios tendrán una renovación en la experiencia de sus consumidores. El sistema es además reutilizable en otros contextos diferentes al de ambientación musical que podremos implementar en la empresa.
+
+A continuación, en la figura 1, se presenta el diagrama de bloques de alto nivel de la aplicación. A la derecha del diagrama se observa el sistema basado en IA, que es el foco del proyecto. 
+%La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+
+%Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
 
 \begin{figure}[htpb]
 \centering 
@@ -136,21 +145,22 @@ Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase 
 
 \vspace{25px}
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
+En la figura se puede observar un actor que provee los archivos de las canciones que son las entradas del sistema, donde se procesa cada canción para extraer sus características musicales; estas características son las salidas y son almacenadas en una base de datos que alimenta el backend de la aplicación móvil.
+%El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
 
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
+%Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+%\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
+%\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+%\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
  
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
+%Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
 
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
+%Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
 
 
 \begin{table}[ht]
@@ -160,90 +170,117 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+%Auspiciante   &                   &              	&        	\\ \hlineRol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
+Cliente       & \clientename      &\empclientename	& C.E.O.	\\ \hline
+Impulsor      & Ing. Andrés Saldarriaga  &\empclientename   & C.T.O.  \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+%Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+%Equipo        & miembro1 \newline 
+%				miembro2          &              	&        	\\ \hline
+%Opositores    &                   &              	&        	\\ \hline
+%Usuario final &                   &              	&        	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
+%El Director suele ser uno de los orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
+%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
 
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
+%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
 
-Es deseable listar a continuación las principales características de cada interesado.
+%Es deseable listar a continuación las principales características de cada interesado.
  
-Por ejemplo:
+%Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Cliente: \clientename, es la encargada de aprobar los entregables.
+  \item Impulsor: El Ing. Andrés Saldarriaga, es el responsable de brindar acceso a los datos de entrada y salida, y las herramientas tecnológicas necesarias en producción, como credenciales, y proveedores de infraestructura en la nube.
+  \item Responsable: \authorname, es quien llevará a cabo el desarrollo del proyecto.
+	\item Orientador: \supname, es experto en solución de problemas de inteligencia artificial y va a ser consultor y ayuda para resolver problemas puntuales en caso de blockers técnicos.
+  \item Usuario final: El usuario final son los clientes de Plusyc Live SAS, que utilizan la aplicación móvil para ambientar su comercio con música personalizada.
 \end{itemize}
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
+%\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+%\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+%¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+%Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
+%\end{consigna}
+
+Desarrollar un sistema de inteligencia artificial capaz de caracterizar automáticamente canciones a partir de su archivo de audio, con el fin de reducir la dependencia de servicios externos y garantizar la escalabilidad, autonomía y confiabilidad de la aplicación de Plusyc Live SAS. Con ello se busca fortalecer la experiencia musical personalizada que la empresa ofrece a los comercios y abrir la posibilidad de aplicar esta tecnología en otros contextos dentro del sector musical.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
+%\begin{consigna}{red}
+%¿Qué se incluye y que no se incluye en este proyecto?
+
+%Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
+
+%Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
+
 \begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+Para avanzar en este punto debemos definir el conjunto total de características, una por modelo.
+\end{consigna}
 
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
+Tener en cuenta que por cada característica vamos a evaluar la representación numérica de la señal de audio, obtener un buen dataset 
+para el mejor modelo de aprendizaje supervisado o de aprendizaje profundo, en términos de costos de procesamiento y métricas de calidad.
 
 El proyecto incluye:
+
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+  \item Revisión del estado del arte sobre datasets musicales disponibles para modelos de aprendizaje supervisado y aprendizaje profundo.
+  \item Evaluación de los datos del cliente para verificar volumen, calidad de asignaciones y posibilidad de conformar un dataset propio.
+  \item Análisis de audio, representaciones numéricas de señales de audio para depurar los datasets.
+  \begin{itemize}
+    \item Interfaz para la recepción de un nuevo archivo de audio.
+    \item Extracción de representaciones tradicionales para los modelos supervisados.
+		\item Generación de representaciones intermedias para aprendizaje profundo.
+	\end{itemize}
+  \item Depuración de los datasets para modelos de aprendizaje supervisado, para la predicción de características musicales.
+	\item Elección de modelos de aprendizaje supervisado a partir de modelos candidatos.
+  \item Evaluación de los datasets para modelos de aprendizaje profundo.
+  \item Selección de modelos de aprendizaje profundo y modelos preentrenados.
+  \item Implementación de los modelos seleccionados.
+  \item Pipeline para la asignación de características mediante el uso de los modelos seleccionados como los mejores.
+  \item Almacenamiento de las características de salida en la base de datos.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+%Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+%\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
+El presente proyecto no incluye:
+\begin{itemize}
+  \item Asignación de las características \textcolor{red}{X, Y, Z}.
+    \item Desarrollo de interfaces gráficas de usuario.
+    \item Mantenimiento a largo plazo.
+    \item \textcolor{red}{Puesta en producción del sistema en un entorno del cliente.}
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
+%\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+Para el desarrollo del presente proyecto se supone:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Disponibilidad de recursos de hardware: Se dispondría de acceso a instancias de procesamiento locales, y en la nube con los suficientes recursos para las fases de entrenamiento y validación del modelo.
+	\item Disponibilidad de datos para el entrenamiento del modelo de procesamiento de audio: Se tendría acceso a un conjunto diverso de datos de audio que cubrirán una amplia gama de géneros y estilos.
+	\item Factibilidad técnica: Se asume que las tecnologías actuales de procesamiento de audio son lo suficientemente avanzadas para implementar el proyecto.
+  \item Tiempo: Se estima que las 600 horas asignadas para el desarrollo del proyecto serán suficientes para completar todas las etapas, incluyendo la planeación, análisis y diseño, desarrollo, pruebas y potenciales correcciones del sistema.
+  \item Asistencia de los interesados: Se contaría con la ayuda del cliente ante blockers tecnicos, dudas sobre los requisitos
+del sistema.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
+%Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+%\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Product Backlog}
 \label{sec:backlog}

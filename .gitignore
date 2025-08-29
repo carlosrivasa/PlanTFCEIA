@@ -274,3 +274,10 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+#Archivos del sistema
+.DS_Store
+Figuras/.DS_Store
+
+#Versión inicial del PDF
+_charter.pdf
