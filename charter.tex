@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en {la implementación de un sistema de generación de características musicales a partir de canciones en el contexto de una aplicación de ambientación musical}. El trabajo tendrá un presupuesto preliminar estimado de {600} horas y un costo estimado de {18750 dólares estadounidenses}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en {la implementación de un sistema de generación de características musicales a partir de canciones en el contexto de una aplicación de ambientación musical}. El trabajo tendrá un presupuesto preliminar estimado de {600} horas y un costo estimado de {\textcolor{red}{xyz} dólares estadounidenses}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -125,7 +125,7 @@ Se adjunta a esta acta la planificación inicial.
 
 El proyecto se hace para la empresa Plusyc Live SAS, dedicada a la creación de experiencias musicales personalizadas para locales comerciales a través de una aplicación móvil. La app hace uso de un pool de canciones propio y un backend que organiza la música según ciertos criterios definidos para cada comercio, y las características musicales asociadas a las canciones, tales como el estilo o ánimo, energía y tempo de la música, entre otros. La asignación de dichas características a las canciones actualmente depende del acceso a APIs de terceros, lo que genera restricciones de disponibilidad y costos, y esto afecta la escalabilidad y autonomía del sistema y finalmente la calidad de la experiencia ofrecida a los clientes.
 
-Proponemos el desarrollo de un sistema de inteligencia artificial que reciba como entrada canciones y genere como salida sus características musicales. A partir de técnicas y representaciones numéricas del sonido, vamos a entrenar modelos de aprendizaje supervisado y aprendizaje profundo, aprovechando fuentes de datos privadas de la empresa y datos públicos disponibles, y podremos inferir los atributos de cada nueva canción sin depender de proveedores externos.
+Proponemos el desarrollo de un sistema de inteligencia artificial que reciba como entrada canciones y genere como salida sus características musicales. A partir de técnicas y representaciones numéricas del sonido, vamos a entrenar modelos de aprendizaje supervisado tradicionales y aprendizaje profundo, aprovechando fuentes de datos privadas de la empresa y datos públicos disponibles, y podremos inferir los atributos de cada nueva canción sin depender de proveedores externos.
 
 En el ámbito de la inteligencia artificial aplicada a la música, existen herramientas que permiten extraer información musical a bajo nivel, y herramientas en línea que permiten extraer algunas características específicas. Sin embargo, no se cuenta con una solución que genere resultados completos y resuelva el problema de la disponibilidad.
 
@@ -225,30 +225,32 @@ Desarrollar un sistema de inteligencia artificial capaz de caracterizar automát
 %Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
 
 \begin{consigna}{red}
-Para avanzar en este punto debemos definir el conjunto total de características, una por modelo.
-\end{consigna}
+Para avanzar en este punto debemos definir el conjunto total de características ${A, B, C, ...}$ y presumiblemente habría entre $1$ y $n$ modelos, siendo $n$ el tamaño del conjunto de características contempladas como parte del alcance.
 
 Tener en cuenta que por cada característica vamos a evaluar la representación numérica de la señal de audio, obtener un buen dataset 
-para el mejor modelo de aprendizaje supervisado o de aprendizaje profundo, en términos de costos de procesamiento y métricas de calidad.
+para el mejor modelo de aprendizaje supervisado tradicional o de aprendizaje profundo, en términos de costos de procesamiento y métricas de calidad.
+Evaluaremos la posibilidad de minimizar la cantidad de modelos, por ejemplo, puede haber casos en que un modelo entrenado aplique para más de una característica o que una característica puede inferirse a partir de otra.
 
+\end{consigna}
 El proyecto incluye:
 
 \begin{itemize}
-  \item Revisión del estado del arte sobre datasets musicales disponibles para modelos de aprendizaje supervisado y aprendizaje profundo.
+  \item Revisión del estado del arte sobre datasets musicales disponibles para modelos de aprendizaje supervisado tradicionales y aprendizaje profundo.
   \item Evaluación de los datos del cliente para verificar volumen, calidad de asignaciones y posibilidad de conformar un dataset propio.
   \item Análisis de audio, representaciones numéricas de señales de audio para depurar los datasets.
   \begin{itemize}
-    \item Interfaz para la recepción de un nuevo archivo de audio.
+    \item \textcolor{red}{Desarrollo de una interfaz para la recepción de un nuevo archivo de audio.}
     \item Extracción de representaciones tradicionales para los modelos supervisados.
 		\item Generación de representaciones intermedias para aprendizaje profundo.
 	\end{itemize}
-  \item Depuración de los datasets para modelos de aprendizaje supervisado, para la predicción de características musicales.
-	\item Elección de modelos de aprendizaje supervisado a partir de modelos candidatos.
+  \item Depuración de los datasets para modelos de aprendizaje supervisado tradicionales, para la predicción de características musicales.
+	\item Elección de modelos de aprendizaje supervisado a partir de modelos candidatos. (Incluye feature engeenering y selección de hiperparámetros).
   \item Evaluación de los datasets para modelos de aprendizaje profundo.
   \item Selección de modelos de aprendizaje profundo y modelos preentrenados.
   \item Implementación de los modelos seleccionados.
-  \item Pipeline para la asignación de características mediante el uso de los modelos seleccionados como los mejores.
+  \item Construcción de un pipeline para la asignación de características mediante el uso de los modelos seleccionados como los mejores.
   \item Almacenamiento de las características de salida en la base de datos.
+  \item \textcolor{red}{Puesta en producción del sistema en un entorno del cliente}.
 \end{itemize}
 
 %Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
@@ -257,10 +259,9 @@ El proyecto incluye:
 
 El presente proyecto no incluye:
 \begin{itemize}
-  \item Asignación de las características \textcolor{red}{X, Y, Z}.
-    \item Desarrollo de interfaces gráficas de usuario.
-    \item Mantenimiento a largo plazo.
-    \item \textcolor{red}{Puesta en producción del sistema en un entorno del cliente.}
+  \item Asignación de las características \textcolor{red}{${Z, Y, X, ...}$}.
+  \item Desarrollo de interfaces gráficas de usuario.
+  \item Mantenimiento y monitoreo a largo plazo.
 \end{itemize}
 
 \section{5. Supuestos del proyecto}
@@ -285,49 +286,86 @@ del sistema.
 \section{6. Product Backlog}
 \label{sec:backlog}
 
-El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
+%El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
 
-El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
+%El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
 
-Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
+%Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
 
-Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
+%Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
 
-Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
+%Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
 
-Las \'{e}picas deben estructurarse de la siguiente forma:
+%Las \'{e}picas deben estructurarse de la siguiente forma:
+
+
+Se definen los siguientes roles:
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+	\item Usuario: el sistema esta diseñado para ser utilizado en ambientación musical en comercios. Los encargados de los comercios no necesitam conocer el funcionamiento interno del sistema, solo brindan sus preferencias y determinan si las canciones son adecuadas o no para sus comercios, lo cual no solo depende de las características musicales sino también de la configuración del comercio en la aplicación, por eso, en este caso, el usuario final es una persona del cliente con conocimientos cuantitativos que verifica que las características son asignadas corréctamente de acuerdo a sus conocimientos musicales.
+	\item Desarrollador de software con conocimiento en inteligencia artificial: la persona ocupando este rol deberá tener conocimiento suficiente para entrenar modelos de procesamiento de audio y generación de características musicales utilizando inteligencia artificial.
+	\item Cliente: es el encargado de verificar que el proyecto cumple con las especificaciones y dar la aprobación final del sistema.
+\end{itemize}
+
+Ëpicas, historias de uusuario (y spikes).
+
+\begin{itemize}
+  \item \textbf{Exploración y validación de datasets para modelos tradicionales}
     \begin{itemize}
-      \item HU1
-      \item HU2
+      \item \textbf{SPIKE1 (3 SP, prioridad máxima):}
+      Como desarrollador de IA, quiero revisar datasets musicales públicos para aprendizaje supervisado, para identificar qué datos podrían usarse en el entrenamiento de modelos tradicionales.
+      \item \textbf{SPIKE2 (5 SP, prioridad máxima):}
+      Como desarrollador de IA, quiero evaluar los datos del cliente para verificar volumen y calidad, para determinar si se puede conformar un dataset propio.
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+  \item \textbf{Desarrollo y evaluación de modelos tradicionales}
     \begin{itemize}
-      \item HU3
-      \item HU4
+      \item \textbf{HU1 (8 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales (SVM, RF, k-NN), para seleccionar el mejor en la predicción de la característica A.
+      \item \textbf{HU2 (8 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales, para seleccionar el mejor en la predicción de la característica B.
+      \item \textbf{HU3 (8 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales, para seleccionar el mejor en la predicción de la característica C.
+      \item \textbf{.}
+      \item \textbf{.}
+      \item \textbf{.}
+      \item \textbf{HUM Opcional (8 SP, prioridad baja):}
+      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales, para seleccionar el mejor en la predicción de la característica M.
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+  \item \textbf{Desarrollo y evaluación de modelos de aprendizaje profundo}
     \begin{itemize}
-      \item HU5
-      \item HU6
+      \item \textbf{SPIKE3 (3 SP, prioridad máxima):}
+      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning (CNN, RNN, Transformers de audio, modelos preentrenados), para seleccionar el más adecuado a las características definidas.
+      \item \textbf{HUM+1 (8 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica M+1.
+      \item \textbf{HUM+2 (8 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica M+2.
+      \item \textbf{.}
+      \item \textbf{.}
+      \item \textbf{.}
+      \item \textbf{HUN Opcional (8 SP, prioridad baja):}
+      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica N.
     \end{itemize}
-  \item \textbf{\'{E}pica 4}
+  \item \textbf{Implementación del pipeline de procesamiento y despliegue}
     \begin{itemize}
-      \item HU7
-      \item HU8
+      \item \textbf{HUN+1 Opcional (5 SP, prioridad baja):}
+      Como desarrollador, quiero una interfaz para la recepción de un nuevo archivo de audio, para alimentar el pipeline de inteligencia artificial que genere las características musicales.
+      \item \textbf{HUN+2 (13 SP, prioridad alta):}
+      Como desarrollador, quiero un pipeline que procese los modelos desarrollados y asigne características al audio, para automatizar la generación de características musicales del audio y almacene los resultados en una base de datos.
+      \item \textbf{HUN+3 (13 SP, prioridad baja):}
+      Como cliente, quiero desplegar el sistema en el backend, para automatizar la generación de características musicales del audio en producción.
+      \item \textbf{HUN+4 (1 SP, prioridad baja):}
+      Como usuario, quiero tener acceso de lectura a la base de datos para poder validar la calidad de las características generadas.
     \end{itemize}
 \end{itemize}
 
-\textbf{Reglas para definir historias de usuario:}
-\begin{itemize}
-  \item Ser concisas y claras.
-  \item Expresarlas en términos cuantificables y medibles.
-  \item No dejar margen para interpretaciones ambiguas.
-  \item Indicar claramente su prioridad y si son opcionales.
-  \item Considerar regulaciones y normas vigentes.
-\end{itemize}
+%\textbf{Reglas para definir historias de usuario:}
+%\begin{itemize}
+%  \item Ser concisas y claras.
+%  \item Expresarlas en términos cuantificables y medibles.
+%  \item No dejar margen para interpretaciones ambiguas.
+%  \item Indicar claramente su prioridad y si son opcionales.
+%  \item Considerar regulaciones y normas vigentes.
+%\end{itemize}
 
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
