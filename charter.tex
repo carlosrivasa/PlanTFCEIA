@@ -30,7 +30,7 @@
  
 \fechaINICIO{26 de agosto de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{14 de octubre de 2025} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{20 de junio de 2025}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{junio de 2026}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en {la implementación de un sistema de generación de características musicales a partir de canciones en el contexto de una aplicación de ambientación musical}. El trabajo tendrá un presupuesto preliminar estimado de {600} horas y un costo estimado de {\textcolor{red}{xyz} dólares estadounidenses}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en {la implementación de un sistema de generación de características musicales a partir de canciones en el contexto de una aplicación de ambientación musical}. El trabajo tendrá un presupuesto preliminar estimado de {600} horas y un costo estimado de {18750} dólares estadounidenses, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública en \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -123,13 +123,13 @@ Se adjunta a esta acta la planificación inicial.
 %	\item ¿Por dónde pasa la innovación?
 %\end{itemize}
 
-El proyecto se hace para la empresa Plusyc Live SAS, dedicada a la creación de experiencias musicales personalizadas para locales comerciales a través de una aplicación móvil. La app hace uso de un pool de canciones propio y un backend que organiza la música según ciertos criterios definidos para cada comercio, y las características musicales asociadas a las canciones, tales como el estilo o ánimo, energía y tempo de la música, entre otros. La asignación de dichas características a las canciones actualmente depende del acceso a APIs de terceros, lo que genera restricciones de disponibilidad y costos, y esto afecta la escalabilidad y autonomía del sistema y finalmente la calidad de la experiencia ofrecida a los clientes.
+El proyecto se hace para la empresa Plusyc Live SAS, dedicada a la creación de experiencias musicales personalizadas para locales comerciales a través de una aplicación móvil. La aplicación utiliza un \textit{pool} de canciones propio, y un \textit{backend} que crea listas de reproducción. Las listas se generan gracias a características musicales, tales como el género, ánimo, energía y tempo de cada canción. Actualmente, la asignación de características musicales depende del acceso a interfaces de programación de aplicaciones (API) de terceros, lo que genera restricciones de disponibilidad y costos. Esto afecta la escalabilidad y autonomía del sistema, y en consecuencia, la calidad de la experiencia ofrecida a los clientes.
 
-Proponemos el desarrollo de un sistema de inteligencia artificial que reciba como entrada canciones y genere como salida sus características musicales. A partir de técnicas y representaciones numéricas del sonido, vamos a entrenar modelos de aprendizaje supervisado tradicionales y aprendizaje profundo, aprovechando fuentes de datos privadas de la empresa y datos públicos disponibles, y podremos inferir los atributos de cada nueva canción sin depender de proveedores externos.
+Se propone el desarrollo de un sistema de inteligencia artificial (IA) que reciba como entrada canciones y genere como salida sus características musicales. Se entrenarán y evaluarán modelos de aprendizaje supervisado, a partir de técnicas y representaciones numéricas del sonido, fuentes de datos privadas de la empresa, y datos públicos disponibles. Y se podrán inferir las características de nuevas canciones sin depender de proveedores externos.
 
-En el ámbito de la inteligencia artificial aplicada a la música, existen herramientas que permiten extraer información musical a bajo nivel, y herramientas en línea que permiten extraer algunas características específicas. Sin embargo, no se cuenta con una solución que genere resultados completos y resuelva el problema de la disponibilidad.
+En el ámbito de la inteligencia artificial aplicada a la música, existen herramientas que permiten extraer información musical a bajo nivel, y herramientas en línea que permiten extraer algunas características específicas. Sin embargo, no se cuenta con una solución que provea resultados completos y resuelva el problema de la disponibilidad.
 
-La propuesta de valor radica en otorgar a Plusyc Live SAS una solución completa, integrada y altamente disponible, en pro de la escalabilidad y la independencia tecnológica. Los comercios tendrán una renovación en la experiencia de sus consumidores. El sistema es además reutilizable en otros contextos diferentes al de ambientación musical que podremos implementar en la empresa.
+La propuesta de valor radica en otorgar a Plusyc Live SAS una solución completa, integrada y altamente disponible, en pro de la escalabilidad y la independencia tecnológica. Los comercios tendrán una renovación en la experiencia de sus consumidores. El sistema será además reutilizable en otros contextos que podremos implementar en la empresa.
 
 A continuación, en la figura 1, se presenta el diagrama de bloques de alto nivel de la aplicación. A la derecha del diagrama se observa el sistema basado en IA, que es el foco del proyecto. 
 %La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
@@ -144,8 +144,18 @@ A continuación, en la figura 1, se presenta el diagrama de bloques de alto nive
 \end{figure}
 
 \vspace{25px}
+En la figura se puede observar un actor que provee los archivos de las canciones que son las entradas del sistema IA, donde se procesa cada canción para extraer sus características musicales. Las características son las salidas, y son almacenadas en una base de datos que alimenta el \textit{backend} de la aplicación. Ahora, en la figura 2, se muestra un diagrama de bloques más detallado del sistema IA. 
 
-En la figura se puede observar un actor que provee los archivos de las canciones que son las entradas del sistema, donde se procesa cada canción para extraer sus características musicales; estas características son las salidas y son almacenadas en una base de datos que alimenta el backend de la aplicación móvil.
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.65\textwidth]{./Figuras/diagBloques2.png}
+\caption{Diagrama de bloques del sistema IA.}
+\label{fig:diagBloques}
+\end{figure}
+
+\vspace{25px}
+En la figura se observa que el sistema IA utiliza tres módulos principales: ``Modelos y algoritmos tradicionales'', ``Aprendizaje profundo'' y ``Otras fuentes''. Cada módulo procesa el archivo de audio y se encarga de inferir o consultar un subconjunto específico de características musicales.
+
 %El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
 
 %Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
@@ -179,7 +189,7 @@ Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ 
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
-%Usuario final &                   &              	&        	\\ \hline
+Usuario final & -                   & -              	& Locales Comerciales        	\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -192,12 +202,13 @@ Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ 
 %Es deseable listar a continuación las principales características de cada interesado.
  
 %Por ejemplo:
+
 \begin{itemize}
 	\item Cliente: \clientename, es la encargada de aprobar los entregables.
-  \item Impulsor: El Ing. Andrés Saldarriaga, es el responsable de brindar acceso a los datos de entrada y salida, y las herramientas tecnológicas necesarias en producción, como credenciales, y proveedores de infraestructura en la nube.
+  \item Impulsor: El Ing. Andrés Saldarriaga, es el responsable de brindar acceso a los datos del cliente, y las herramientas tecnológicas necesarias en producción, como credenciales, y proveedores de infraestructura en la nube.
   \item Responsable: \authorname, es quien llevará a cabo el desarrollo del proyecto.
-	\item Orientador: \supname, es experto en solución de problemas de inteligencia artificial y va a ser consultor y ayuda para resolver problemas puntuales en caso de blockers técnicos.
-  \item Usuario final: El usuario final son los clientes de Plusyc Live SAS, que utilizan la aplicación móvil para ambientar su comercio con música personalizada.
+	\item Orientador: \supname, es experto en solución de problemas de inteligencia artificial y va a ser consultor y ayuda para resolver problemas puntuales en caso de \textit{blockers} técnicos.
+  \item Usuario final: El usuario final son los clientes de Plusyc Live SAS, que utilizan la aplicación para ambientar su comercio con listas personalizadas.
 \end{itemize}
 
 %\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
@@ -212,7 +223,7 @@ Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ 
 %Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
 %\end{consigna}
 
-Desarrollar un sistema de inteligencia artificial capaz de caracterizar automáticamente canciones a partir de su archivo de audio, con el fin de reducir la dependencia de servicios externos y garantizar la escalabilidad, autonomía y confiabilidad de la aplicación de Plusyc Live SAS. Con ello se busca fortalecer la experiencia musical personalizada que la empresa ofrece a los comercios y abrir la posibilidad de aplicar esta tecnología en otros contextos dentro del sector musical.
+Desarrollar un sistema de inteligencia artificial capaz de caracterizar automáticamente canciones a partir de su archivo de audio, con el fin de reducir la dependencia de servicios externos y garantizar la escalabilidad, autonomía y confiabilidad de la aplicación de Plusyc Live SAS. Con ello, se busca fortalecer la experiencia musical personalizada que la empresa ofrece a los comercios y abrir la posibilidad de aplicar esta tecnología en otros contextos dentro del sector musical.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -224,33 +235,32 @@ Desarrollar un sistema de inteligencia artificial capaz de caracterizar automát
 
 %Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
 
-\begin{consigna}{red}
-Para avanzar en este punto debemos definir el conjunto total de características ${A, B, C, ...}$ y presumiblemente habría entre $1$ y $n$ modelos, siendo $n$ el tamaño del conjunto de características contempladas como parte del alcance.
+Se definen los siguientes subconjuntos de catacterísticas musicales:
+\begin{itemize}
+  \item Básicas: \textit{\{Key, Mode, Tempo, Loudness\}}.
+  \item Perceptibles: \textit{\{Danceability, Energy, Speechiness, Acousticness, Instrumentalness, Liveness, Valence\}}.
+  \item Clasificables por ánimo (\textit{Mood}): \textit{\{Primary Mood, Secondary Mood\}}.
+  \item Clasificables por género: \textit{\{Genre, Subgenres\}}.
+  \item Otras (Aquellas que no requiren de IA para su asignación): \textit{\{Artist, Album, Album release date, Artist origin region, Artist origin country, Duration, Explicit, Popularity, Fingerprint\}}.
+\end{itemize}
 
-Tener en cuenta que por cada característica vamos a evaluar la representación numérica de la señal de audio, obtener un buen dataset 
-para el mejor modelo de aprendizaje supervisado tradicional o de aprendizaje profundo, en términos de costos de procesamiento y métricas de calidad.
-Evaluaremos la posibilidad de minimizar la cantidad de modelos, por ejemplo, puede haber casos en que un modelo entrenado aplique para más de una característica o que una característica puede inferirse a partir de otra.
-
-\end{consigna}
-El proyecto incluye:
+El proyecto incluye la asignación de las características básicas, perceptibles y las clasificables por ánimo y género. Para lograr esto es necesario:
 
 \begin{itemize}
-  \item Revisión del estado del arte sobre datasets musicales disponibles para modelos de aprendizaje supervisado tradicionales y aprendizaje profundo.
-  \item Evaluación de los datos del cliente para verificar volumen, calidad de asignaciones y posibilidad de conformar un dataset propio.
-  \item Análisis de audio, representaciones numéricas de señales de audio para depurar los datasets.
+  \item Revisión del estado del arte sobre \textit{datasets} musicales disponibles para modelos de aprendizaje supervisado (algoritmos tradicionales) y aprendizaje profundo.
+  \item Evaluación de los datos del cliente para verificar volumen, calidad de asignaciones y posibilidad de conformar un \textit{dataset} propio.
+  \item Análisis de audio, representaciones numéricas de señales de audio para depurar los \textit{datasets}.
   \begin{itemize}
-    \item \textcolor{red}{Desarrollo de una interfaz para la recepción de un nuevo archivo de audio.}
     \item Extracción de representaciones tradicionales para los modelos supervisados.
 		\item Generación de representaciones intermedias para aprendizaje profundo.
 	\end{itemize}
-  \item Depuración de los datasets para modelos de aprendizaje supervisado tradicionales, para la predicción de características musicales.
-	\item Elección de modelos de aprendizaje supervisado a partir de modelos candidatos. (Incluye feature engeenering y selección de hiperparámetros).
-  \item Evaluación de los datasets para modelos de aprendizaje profundo.
-  \item Selección de modelos de aprendizaje profundo y modelos preentrenados.
+  \item Depuración de los \textit{datasets} para los modelos de aprendizaje supervisado tradicionales.
+	\item Elección de modelos de aprendizaje supervisado y algoritmos tradicionales para la predicción de las características basicas.
+  \item Evaluación de los \textit{datasets} para modelos de aprendizaje profundo.
+  \item Selección de modelos de aprendizaje profundo y modelos preentrenados para la inferencia de características perceptibles, y clasificables por ánimo y género.
   \item Implementación de los modelos seleccionados.
   \item Construcción de un pipeline para la asignación de características mediante el uso de los modelos seleccionados como los mejores.
   \item Almacenamiento de las características de salida en la base de datos.
-  \item \textcolor{red}{Puesta en producción del sistema en un entorno del cliente}.
 \end{itemize}
 
 %Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
@@ -259,8 +269,10 @@ El proyecto incluye:
 
 El presente proyecto no incluye:
 \begin{itemize}
-  \item Asignación de las características \textcolor{red}{${Z, Y, X, ...}$}.
+  \item Asignación del subconjunto de otras características que no requieren de IA para su asignación.
+  \item Desarrollo de una interfaz para la recepción de un nuevo archivo de audio.
   \item Desarrollo de interfaces gráficas de usuario.
+  \item Puesta en producción del sistema en un entorno del cliente.
   \item Mantenimiento y monitoreo a largo plazo.
 \end{itemize}
 
@@ -271,12 +283,15 @@ El presente proyecto no incluye:
 Para el desarrollo del presente proyecto se supone:
 
 \begin{itemize}
-	\item Disponibilidad de recursos de hardware: Se dispondría de acceso a instancias de procesamiento locales, y en la nube con los suficientes recursos para las fases de entrenamiento y validación del modelo.
+	\item Disponibilidad de recursos de hardware: Se dispondría de acceso a instancias de procesamiento locales, y en la nube con los suficientes recursos para las fases de entrenamiento y validación de los modelos.
 	\item Disponibilidad de datos para el entrenamiento del modelo de procesamiento de audio: Se tendría acceso a un conjunto diverso de datos de audio que cubrirán una amplia gama de géneros y estilos.
-	\item Factibilidad técnica: Se asume que las tecnologías actuales de procesamiento de audio son lo suficientemente avanzadas para implementar el proyecto.
+	\item Factibilidad técnica: Se asume que las tecnologías actuales de procesamiento de audio son lo suficientemente avanzadas para implementar el proyecto. Y en particular.
+  \begin{itemize}  
+    \item Las características básicas se pueden generar usando modelos de aprendizaje de máquina y algoritmos tradicionales.
+    \item Las perceptibles y las clasificables por ánimo y género se pueden predecir usando un modelos de aprendizaje profundo de múltiples salidas.
+  \end{itemize}    
   \item Tiempo: Se estima que las 600 horas asignadas para el desarrollo del proyecto serán suficientes para completar todas las etapas, incluyendo la planeación, análisis y diseño, desarrollo, pruebas y potenciales correcciones del sistema.
-  \item Asistencia de los interesados: Se contaría con la ayuda del cliente ante blockers tecnicos, dudas sobre los requisitos
-del sistema.
+  \item Asistencia de los interesados: Se contaría con la ayuda del cliente ante \textit{blockers} tecnicos, dudas sobre los requisitos del sistema.
 \end{itemize}
 
 %Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
@@ -310,12 +325,12 @@ Se definen los siguientes roles:
 Ëpicas, historias de uusuario (y spikes).
 
 \begin{itemize}
-  \item \textbf{Exploración y validación de datasets para modelos tradicionales}
+  \item \textbf{Exploración y validación de \textit{datasets} para modelos tradicionales}
     \begin{itemize}
       \item \textbf{SPIKE1 (3 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero revisar datasets musicales públicos para aprendizaje supervisado, para identificar qué datos podrían usarse en el entrenamiento de modelos tradicionales.
+      Como desarrollador de IA, quiero revisar \textit{datasets} musicales públicos y técnicas de representación de audio para aprendizaje supervisado, para identificar qué datos podrían usarse en el entrenamiento de modelos tradicionales.
       \item \textbf{SPIKE2 (5 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero evaluar los datos del cliente para verificar volumen y calidad, para determinar si se puede conformar un dataset propio.
+      Como desarrollador de IA, quiero evaluar los datos del cliente para verificar volumen y calidad, para determinar si se puede conformar un \textit{dataset} propio.
     \end{itemize}
   \item \textbf{Desarrollo y evaluación de modelos tradicionales}
     \begin{itemize}
@@ -334,9 +349,9 @@ Se definen los siguientes roles:
   \item \textbf{Desarrollo y evaluación de modelos de aprendizaje profundo}
     \begin{itemize}
       \item \textbf{SPIKE3 (3 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning (CNN, RNN, Transformers de audio, modelos preentrenados), para seleccionar el más adecuado a las características definidas.
+      Como desarrollador de IA, quiero revisar {datasets} musicales públicos y las técnicas de representación de audio para aprendizaje profundo, para identificar qué datos podrían usarse en el entrenamiento de modelos de deep learning.
       \item \textbf{HUM+1 (8 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica M+1.
+      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning (CNN, RNN, Transformers de audio, modelos preentrenados), para seleccionar el más adecuado en la predicción de la característica M+1.
       \item \textbf{HUM+2 (8 SP, prioridad alta):}
       Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica M+2.
       \item \textbf{.}
@@ -352,7 +367,7 @@ Se definen los siguientes roles:
       \item \textbf{HUN+2 (13 SP, prioridad alta):}
       Como desarrollador, quiero un pipeline que procese los modelos desarrollados y asigne características al audio, para automatizar la generación de características musicales del audio y almacene los resultados en una base de datos.
       \item \textbf{HUN+3 (13 SP, prioridad baja):}
-      Como cliente, quiero desplegar el sistema en el backend, para automatizar la generación de características musicales del audio en producción.
+      Como cliente, quiero desplegar el sistema en el \textit{backend}, para automatizar la generación de características musicales del audio en producción.
       \item \textbf{HUN+4 (1 SP, prioridad baja):}
       Como usuario, quiero tener acceso de lectura a la base de datos para poder validar la calidad de las características generadas.
     \end{itemize}
@@ -370,44 +385,132 @@ Se definen los siguientes roles:
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
 
-Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
+%Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
 
-Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
+%Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
 
-Se estructuran de forma análoga a las \'{e}picas del backlog:
+%Se estructuran de forma análoga a las \'{e}picas del backlog:
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+  \item \textbf{Exploración y validación de \textit{datasets} para modelos tradicionales}
     \begin{itemize}
-      \item Criterios de aceptación HU1
-      \item Criterios de aceptación HU2
+      \item \textbf{SPIKE1}
+      \begin{itemize}
+        \item Se escribe un documento que incluye el análisis realizado de los \textit{datasets} públicos, y las representaciones de audio disponibles.
+      \item Se listan los \textit{datasets} seleccionados para el conjunto de características ${A, B, C, ...}$ y las razones de selección.
+        \item Se detalla el procesamiento necesario a realizar en los datos por cada uno de los \textit{dataset} seleccionados.
+      \end{itemize}
+      \item \textbf{SPIKE2}
+      \begin{itemize}
+        \item Se edita el documento anterior con el objetivo de incluir el inventario de los datos del cliente, incluyendo la cantidad de audios y características.
+        \item Se describe la calidad de los datos en términos de la consistencia de las características asignadas.
+        \item Se describen las razones que determinan la viabilidad de construir un \textit{dataset} propio.
+      \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+
+  \item \textbf{Desarrollo y evaluación de modelos tradicionales}
     \begin{itemize}
-      \item Criterios de aceptación HU3
-      \item Criterios de aceptación HU4
+      \item \textbf{HU1 (Ejecución del ciclo de vida de IA para predicciones de la característica A)}
+      \begin{itemize}
+        \item Se obtiene un \textit{dataset} depurado para la característica a partir de los documentos generados en los spikes, para la característica A.  
+        \item Se constata la aplicación de técnicas de feature engeenering. 
+        \item Se constata el entrenamiento de más de un modelo, según aplique.
+        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico (precisión, recall, F1 score, test speedup).
+        \item Se itera hasta obtener resultados aceptables. (70\% de F1, balance de precisión y recall, y el mejor speedup).
+      \end{itemize}
+      \item \textbf{HU2 (Ejecución del ciclo de vida de IA para la característica B)}
+      \begin{itemize}
+        \item Se obtiene un \textit{dataset} o se reutiliza un \textit{dataset} ya depurado a partir de los documentos generados en los spikes para la característica B.  
+        \item Se constata la aplicación de técnicas de feature engeenering. 
+        \item Se constata el entrenamiento de más de un modelo, según aplique.
+        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico (precisión, recall, F1 score, test speedup).
+        \item Se itera hasta obtener resultados aceptables. (70\% de F1, balance de precisión y recall, y el mejor speedup).
+      \end{itemize}
+      \item \textbf{HU3 (característica C)}
+      \begin{itemize}
+        \item Se obtiene un \textit{dataset} o se reutiliza un \textit{dataset} ya depurado a partir de los documentos generados en los spikes para la característica C.  
+        \item Se constata la aplicación de técnicas de feature engeenering. 
+        \item Se constata el entrenamiento de más de un modelo, según aplique.
+        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico (precisión, recall, F1 score, test speedup).
+        \item Se itera hasta obtener resultados aceptables. (70\% de F1, balance de precisión y recall, y el mejor speedup).
+      \end{itemize}
+      \item \textbf{.}
+      \item \textbf{.}
+      \item \textbf{.}
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+
+  \item \textbf{Desarrollo y evaluación de modelos de aprendizaje profundo}
     \begin{itemize}
-      \item Criterios de aceptación HU5
-      \item Criterios de aceptación HU6
+      \item \textbf{SPIKE3}
+        \begin{itemize}
+          \item Se edita el documento resultante del SPIKE1 incluyendo el análisis realizado de los \textit{datasets} públicos, y las representaciones de audio aplicables al aprendizaje profundo.
+          \item Se listan los \textit{datasets} seleccionados para el conjunto de características ${M+1, M+2, ...}$ y las razones de selección.
+          \item Se detalla el procesamiento necesario a realizar en los datos por cada uno de los \textit{dataset} seleccionados.
+          %representaciones usadas (MFCC, Mel-spectrogram, Chroma).
+        \end{itemize}
+      \item \textbf{HUM+1 (característica M+1)}
+      \begin{itemize}
+        \item Se obtiene un \textit{dataset} depurado para la característica a partir de los documentos generados en el SPIKE3 para la característica M+1.  
+        \item Se constata la aplicación de técnicas relacionadas con el \textcolor{red}{ciclo de vida del aprendizaje profundo}. 
+        \item Se constata el entrenamiento de más de un modelo de tipo CNN, RNN, Transformer o preentrenado, según aplique.
+        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico. \textcolor{red}{Revisar los conceptos de DL}.
+        \item Se itera hasta obtener resultados aceptables.
+        %EJ. El modelo alcanza al menos un 75% de F1 o una métrica definida por cliente.
+        %En DL se entrenan modelos con y sin transferencia de aprendizaje.
+        %Puede ser que los experimentos quedan registrados en scripts reproducibles.
+      \end{itemize}
+      \item \textbf{HUM+2 (característica M+2)}
+      \begin{itemize}
+        \item Se obtiene un \textit{dataset} depurado para la característica a partir de los documentos generados en el SPIKE3 para la característica M+2.  
+        \item Se constata la aplicación de técnicas relacionadas con el \textcolor{red}{ciclo de vida del aprendizaje profundo}. 
+        \item Se constata el entrenamiento de más de un modelo, según aplique.
+        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico. \textcolor{red}{Revisar los conceptos de DL}.
+        \item Se itera hasta obtener resultados aceptables.
+      \end{itemize}
+      \item \textbf{.}
+      \item \textbf{.}
+      \item \textbf{.}
     \end{itemize}
-  \item \textbf{\'{E}pica 4}
+
+  \item \textbf{Implementación del pipeline de procesamiento y despliegue}
     \begin{itemize}
-      \item Criterios de aceptación HU7
-      \item Criterios de aceptación HU8
+      \item \textbf{HUN+1 Opcional (interfaz de recepción)}
+      \begin{itemize}
+        \item La interfaz permite subir archivos de audio en formato estándar (\textcolor{red}{.mp3 o .wav}).
+        \item El archivo queda en una cola de procesamiento para el pipeline.
+        \item El sistema devuelve confirmación de recepción y ejecuta el pipeline por archivo.
+      \end{itemize}
+      \item \textbf{HUN+2 (pipeline de procesamiento)}
+        \begin{itemize}
+        \item El pipeline procesa automáticamente un archivo nuevo.
+        \item Se ejecutan los modelos entrenados y se asignan las características al audio.
+        \item Los resultados se almacenan en la base de datos.
+        \end{itemize}
+      \item \textbf{HUN+3 (despliegue en \textit{backend})}
+      \begin{itemize}
+        \item El sistema está disponible en un entorno de prueba accesible por el cliente.
+        \item El backend permite ejecutar al menos (\textcolor{red}{x} archivos consecutivos sin fallo.
+        \item La documentación de despliegue está disponible para reproducir la instalación.
+      \end{itemize}
+      \item \textbf{HUN+4 (validación por usuario)}
+      \begin{itemize}
+        \item El usuario puede acceder para consultar las características de todas las canciones procesadas en la base de datos.
+        \item El usuario puede filtrar las características canción por canción.
+        \item El usuario puede verificar los resultados y reportar cualquier incidente al cliente y al desarrollador.
+      \end{itemize}
     \end{itemize}
+
 \end{itemize}
 
-\textbf{Reglas para definir criterios de aceptación:}
-\begin{itemize}
-  \item Medibles y verificables.
-  \item Especificar cuándo una historia se considera completada.
-  \item Incluir condiciones específicas.
-  \item No ambiguos.
-  \item Probables de testear funcional o técnicamente.
-  \item Mínimo 3 criterios por HU.
-\end{itemize}
+%\textbf{Reglas para definir criterios de aceptación:}
+%\begin{itemize}
+%  \item Medibles y verificables.
+%  \item Especificar cuándo una historia se considera completada.
+%  \item Incluir condiciones específicas.
+%  \item No ambiguos.
+%  \item Probables de testear funcional o técnicamente.
+%  \item Mínimo 3 criterios por HU.
+%\end{itemize}
 
 \section{8. Fases de CRISP-DM}
 
