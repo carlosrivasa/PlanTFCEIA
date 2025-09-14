@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Asignación de Características Musicales con IA para Ambientación Comercial} 
+\titulo{Asignación de características musicales para ambientación comercial} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -129,7 +129,7 @@ Se propone el desarrollo de un sistema de inteligencia artificial (IA) que recib
 
 En el ámbito de la inteligencia artificial aplicada a la música, existen herramientas que permiten extraer información musical a bajo nivel, y herramientas en línea que permiten extraer algunas características específicas. Sin embargo, no se cuenta con una solución que provea resultados completos y resuelva el problema de la disponibilidad.
 
-La propuesta de valor radica en otorgar a Plusyc Live SAS una solución completa, integrada y altamente disponible, en pro de la escalabilidad y la independencia tecnológica. Los comercios tendrán una renovación en la experiencia de sus consumidores. El sistema será además reutilizable en otros contextos que podremos implementar en la empresa.
+La propuesta de valor radica en otorgar a Plusyc Live SAS una solución completa, integrada y altamente disponible, en pro de la escalabilidad y la independencia tecnológica. Los comercios tendrán una renovación en la experiencia de sus consumidores. El sistema será además reutilizable en otros proyectos de la empresa.
 
 A continuación, en la figura 1, se presenta el diagrama de bloques de alto nivel de la aplicación. A la derecha del diagrama se observa el sistema basado en IA, que es el foco del proyecto. 
 %La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
@@ -173,6 +173,24 @@ En la figura se observa que el sistema IA utiliza tres módulos principales: ``M
 %Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
 
 
+%El Director suele ser uno de los orientadores.
+
+%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
+
+%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
+
+%Es deseable listar a continuación las principales características de cada interesado.
+ 
+%Por ejemplo:
+
+\begin{itemize}
+	\item Cliente: \clientename, es la encargada de aprobar los entregables.
+  \item Impulsor: el Ing. Andrés Saldarriaga, es el responsable de brindar acceso a los datos del cliente, y las herramientas tecnológicas necesarias en producción, como credenciales, y proveedores de infraestructura en la nube.
+  \item Responsable: \authorname, es quien llevará a cabo el desarrollo del proyecto.
+	\item Orientador: \supname, es experto en solución de problemas de inteligencia artificial y va a ser consultor y ayuda para resolver problemas puntuales en caso de \textit{blockers} técnicos.
+  \item Usuario final: el usuario final son los clientes de Plusyc Live SAS, que utilizan la aplicación para ambientar su comercio con listas personalizadas.
+\end{itemize}
+
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
@@ -189,27 +207,9 @@ Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ 
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
-Usuario final & -                   & -              	& Locales Comerciales        	\\ \hline
+Usuario final & -                   & -              	& Locales comerciales        	\\ \hline
 \end{tabularx}
 \end{table}
-
-%El Director suele ser uno de los orientadores.
-
-%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-%Es deseable listar a continuación las principales características de cada interesado.
- 
-%Por ejemplo:
-
-\begin{itemize}
-	\item Cliente: \clientename, es la encargada de aprobar los entregables.
-  \item Impulsor: El Ing. Andrés Saldarriaga, es el responsable de brindar acceso a los datos del cliente, y las herramientas tecnológicas necesarias en producción, como credenciales, y proveedores de infraestructura en la nube.
-  \item Responsable: \authorname, es quien llevará a cabo el desarrollo del proyecto.
-	\item Orientador: \supname, es experto en solución de problemas de inteligencia artificial y va a ser consultor y ayuda para resolver problemas puntuales en caso de \textit{blockers} técnicos.
-  \item Usuario final: El usuario final son los clientes de Plusyc Live SAS, que utilizan la aplicación para ambientar su comercio con listas personalizadas.
-\end{itemize}
 
 %\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
@@ -235,7 +235,7 @@ Desarrollar un sistema de inteligencia artificial capaz de caracterizar automát
 
 %Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
 
-Se definen los siguientes subconjuntos de catacterísticas musicales:
+Se definen los siguientes subconjuntos de características musicales:
 \begin{itemize}
   \item Básicas: \textit{\{Key, Mode, Tempo, Loudness\}}.
   \item Perceptibles: \textit{\{Danceability, Energy, Speechiness, Acousticness, Instrumentalness, Liveness, Valence\}}.
@@ -255,11 +255,11 @@ El proyecto incluye la asignación de las características básicas, perceptible
 		\item Generación de representaciones intermedias para aprendizaje profundo.
 	\end{itemize}
   \item Depuración de los \textit{datasets} para los modelos de aprendizaje supervisado tradicionales.
-	\item Elección de modelos de aprendizaje supervisado y algoritmos tradicionales para la predicción de las características basicas.
+	\item Elección de modelos de aprendizaje supervisado y algoritmos tradicionales para la predicción de las características básicas.
   \item Evaluación de los \textit{datasets} para modelos de aprendizaje profundo.
   \item Selección de modelos de aprendizaje profundo y modelos preentrenados para la inferencia de características perceptibles, y clasificables por ánimo y género.
   \item Implementación de los modelos seleccionados.
-  \item Construcción de un pipeline para la asignación de características mediante el uso de los modelos seleccionados como los mejores.
+  \item Construcción de un  \textit{pipeline} para la asignación de características mediante el uso de los modelos seleccionados como los mejores.
   \item Almacenamiento de las características de salida en la base de datos.
 \end{itemize}
 
@@ -283,15 +283,15 @@ El presente proyecto no incluye:
 Para el desarrollo del presente proyecto se supone:
 
 \begin{itemize}
-	\item Disponibilidad de recursos de \textit{hardware}: Se dispondría de acceso a instancias de procesamiento locales, y en la nube con los suficientes recursos para las fases de entrenamiento y validación de los modelos.
-	\item Disponibilidad de datos para el entrenamiento del modelo de procesamiento de audio: Se tendría acceso a un conjunto diverso de datos de audio que cubrirán una amplia gama de géneros y estilos.
-	\item Factibilidad técnica: Se asume que las tecnologías actuales de procesamiento de audio son lo suficientemente avanzadas para implementar el proyecto. Y en particular.
+	\item Disponibilidad de recursos de \textit{hardware}: se dispondría de acceso a instancias de procesamiento locales, y en la nube con los suficientes recursos para las fases de entrenamiento y validación de los modelos.
+	\item Disponibilidad de datos para el entrenamiento del modelo de procesamiento de audio: se tendría acceso a un conjunto diverso de datos de audio que cubrirán una amplia gama de géneros y estilos.
+	\item Factibilidad técnica: se asume que las tecnologías actuales de procesamiento de audio son lo suficientemente avanzadas para implementar el proyecto. Y en particular.
   \begin{itemize}  
     \item Las características básicas se pueden generar usando modelos de aprendizaje de máquina y algoritmos tradicionales.
     \item Las perceptibles y las clasificables por ánimo y género se pueden predecir usando un modelos de aprendizaje profundo de múltiples salidas.
   \end{itemize}    
-  \item Tiempo: Se estima que las 600 horas asignadas para el desarrollo del proyecto serán suficientes para completar todas las etapas, incluyendo la planeación, análisis y diseño, desarrollo, pruebas y potenciales correcciones del sistema.
-  \item Asistencia de los interesados: Se contaría con la ayuda del cliente ante \textit{blockers} técnicos, y dudas sobre los requisitos del sistema.
+  \item Tiempo: se estima que las 600 horas asignadas para el desarrollo del proyecto serán suficientes para completar todas las etapas, incluyendo la planeación, análisis y diseño, desarrollo, pruebas y potenciales correcciones del sistema.
+  \item Asistencia de los interesados: se contaría con la ayuda del cliente ante \textit{blockers} técnicos, y dudas sobre los requisitos del sistema.
 \end{itemize}
 
 %Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
@@ -317,59 +317,78 @@ Para el desarrollo del presente proyecto se supone:
 Se definen los siguientes roles:
 
 \begin{itemize}
-	\item Usuario: el sistema esta diseñado para ser utilizado en ambientación musical en comercios. Los encargados de los comercios no necesitam conocer el funcionamiento interno del sistema, solo brindan sus preferencias y determinan si las canciones son adecuadas o no para sus comercios, lo cual no solo depende de las características musicales sino también de la configuración del comercio en la aplicación, por eso, en este caso, el usuario final es una persona del cliente con conocimientos cuantitativos que verifica que las características son asignadas corréctamente de acuerdo a sus conocimientos musicales.
-	\item Desarrollador de software con conocimiento en inteligencia artificial: la persona ocupando este rol deberá tener conocimiento suficiente para entrenar modelos de procesamiento de audio y generación de características musicales utilizando inteligencia artificial.
-	\item Cliente: es el encargado de verificar que el proyecto cumple con las especificaciones y dar la aprobación final del sistema.
+	\item Usuario: la persona del lado del cliente con conocimientos en características musicales, para verificar que las salidas son correctas.
+	\item Desarrollador de software con conocimiento en inteligencia artificial: la persona ocupando este rol deberá tener conocimiento suficiente en procesamiento de audio, y entrenamiento de modelos de inteligencia artificial, para la generación de características musicales.
+	\item Cliente: es el encargado de verificar que el proyecto cumple con las especificaciones, y dar la aprobación final del sistema.
 \end{itemize}
 
-Ëpicas, historias de uusuario (y spikes).
+Épicas, historias de usuario (HU) y \textit{spikes}.
 
 \begin{itemize}
-  \item \textbf{Exploración y validación de \textit{datasets} para modelos tradicionales}
+  \item \textbf{Selección de \textit{datasets} y técnicas de representación de audio}
     \begin{itemize}
-      \item \textbf{SPIKE1 (3 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero revisar \textit{datasets} musicales públicos y técnicas de representación de audio para aprendizaje supervisado, para identificar qué datos podrían usarse en el entrenamiento de modelos tradicionales.
-      \item \textbf{SPIKE2 (5 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero evaluar los datos del cliente para verificar volumen y calidad, para determinar si se puede conformar un \textit{dataset} propio.
+      \item \textbf{\textit{Spike} 1 (3 story points (SP), prioridad máxima):}
+      Como desarrollador de IA, quiero encontrar \textit{datasets} musicales públicos, y técnicas de representación de audio para ser usados en algoritmos y modelos tradicionales.
+      \item \textbf{\textit{Spike} 2 (2 SP, prioridad máxima):}
+      Como desarrollador de IA, quiero determinar cuales \textit{datasets} musicales públicos, y técnicas de representación de audio, se usarán para aprendizaje profundo.      
+      \item \textbf{\textit{Spike} 3 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero evaluar los datos del cliente, en términos de volumen y calidad, para determinar si es posible conformar un \textit{dataset} propio.
+
     \end{itemize}
-  \item \textbf{Desarrollo y evaluación de modelos tradicionales}
+  \item \textbf{Desarrollo de algoritmos y modelos tradicionales para características básicas}
     \begin{itemize}
-      \item \textbf{HU1 (8 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales (SVM, RF, k-NN), para seleccionar el mejor en la predicción de la característica A.
-      \item \textbf{HU2 (8 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales, para seleccionar el mejor en la predicción de la característica B.
-      \item \textbf{HU3 (8 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales, para seleccionar el mejor en la predicción de la característica C.
-      \item \textbf{.}
-      \item \textbf{.}
-      \item \textbf{.}
-      \item \textbf{HUM Opcional (8 SP, prioridad baja):}
-      Como desarrollador de IA, quiero entrenar y comparar modelos supervisados tradicionales, para seleccionar el mejor en la predicción de la característica M.
+      \item \textbf{HU 1 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero realizar un análisis exploratorio de datos (EDA) de las característica básicas, para entender su distribución.
+      \item \textbf{HU 2 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero preparar los datos para que sean aptos para el modelado.
+      \item \textbf{HU 3 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar modelos tradicionales para predecir cada una de las características básicas.
+      \item \textbf{HU 4 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero evaluar los resultados del modelo con métricas apropiadas, para validar su calidad, y seleccionar el mejor.
     \end{itemize}
-  \item \textbf{Desarrollo y evaluación de modelos de aprendizaje profundo}
+  \item \textbf{Desarrollo de modelos de aprendizaje profundo para características perceptibles}
     \begin{itemize}
-      \item \textbf{SPIKE3 (3 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero revisar {datasets} musicales públicos y las técnicas de representación de audio para aprendizaje profundo, para identificar qué datos podrían usarse en el entrenamiento de modelos de deep learning.
-      \item \textbf{HUM+1 (8 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning (CNN, RNN, Transformers de audio, modelos preentrenados), para seleccionar el más adecuado en la predicción de la característica M+1.
-      \item \textbf{HUM+2 (8 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica M+2.
-      \item \textbf{.}
-      \item \textbf{.}
-      \item \textbf{.}
-      \item \textbf{HUN Opcional (8 SP, prioridad baja):}
-      Como desarrollador de IA, quiero entrenar y evaluar modelos de deep learning, para seleccionar el más adecuado en la predicción de la característica N.
+      \item \textbf{HU 5 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero realizar un EDA de los datos de las características perceptibles, para entender su distribución y correlaciones.
+      \item \textbf{HU 6 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero preparar los datos de audio para entrenar un modelo.
+      \item \textbf{HU 7 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir las características perceptibles.
+      \item \textbf{HU 8 (5 SP, prioridad alta):}
+      Como desarrollador de IA, quiero evaluar los resultados del modelo con métricas apropiadas para validar su desempeño.
     \end{itemize}
-  \item \textbf{Implementación del pipeline de procesamiento y despliegue}
+  \item \textbf{Desarrollo de modelos de aprendizaje profundo para características clasificables por ánimo}
     \begin{itemize}
-      \item \textbf{HUN+1 Opcional (5 SP, prioridad baja):}
-      Como desarrollador, quiero una interfaz para la recepción de un nuevo archivo de audio, para alimentar el pipeline de inteligencia artificial que genere las características musicales.
-      \item \textbf{HUN+2 (13 SP, prioridad alta):}
-      Como desarrollador, quiero un pipeline que procese los modelos desarrollados y asigne características al audio, para automatizar la generación de características musicales del audio y almacene los resultados en una base de datos.
-      \item \textbf{HUN+3 (13 SP, prioridad baja):}
+      \item \textbf{HU 9 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero realizar un EDA de los datos de las características clasificables por ánimo, para analizar su distribución y categorías.
+      \item \textbf{HU 10 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero preparar los datos para el modelado de \textit{moods}.
+      \item \textbf{HU 11 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir \textit{primary} y \textit{secondary mood}.
+      \item \textbf{HU 12 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero evaluar el modelo con métricas de clasificación multi-clase para validar su desempeño.
+    \end{itemize}
+  \item \textbf{Desarrollo de modelos de aprendizaje profundo para características clasificables por género}
+    \begin{itemize}
+      \item \textbf{HU 13 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero realizar un EDA de los datos de géneros y subgéneros para entender su distribución y categorías.
+      \item \textbf{HU 14 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero preparar los datos para modelado de género.
+      \item \textbf{HU 15 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir el género y los subgéneros.
+      \item \textbf{HU 16 (3 SP, prioridad alta):}
+      Como desarrollador de IA, quiero evaluar los resultados del modelo con métricas de clasificación, para validar su desempeño.
+    \end{itemize}        
+  \item \textbf{Implementación del  \textit{pipeline} de procesamiento}
+    \begin{itemize}
+      \item \textbf{HU 17 Opcional (8 SP, prioridad baja):}
+      Como cliente, quiero una interfaz para la recepción de un nuevo archivo de audio, para alimentar el \textit{pipeline} que genere las características musicales.
+      \item \textbf{HU 18 (8 SP, prioridad media):}
+      Como cliente, quiero un  \textit{pipeline} que procese los modelos desarrollados para automatizar la generación de características musicales, y almacenar los resultados en una base de datos.
+      \item \textbf{HU 19 Opcional (13 SP, prioridad baja):}
       Como cliente, quiero desplegar el sistema en el \textit{backend}, para automatizar la generación de características musicales del audio en producción.
-      \item \textbf{HUN+4 (1 SP, prioridad baja):}
-      Como usuario, quiero tener acceso de lectura a la base de datos para poder validar la calidad de las características generadas.
+      \item \textbf{HU 20 (1 SP, prioridad alta):}
+      Como usuario, quiero tener acceso de lectura a la base de datos para validar la calidad de las características resultantes.
     \end{itemize}
 \end{itemize}
 
@@ -392,111 +411,84 @@ Se definen los siguientes roles:
 %Se estructuran de forma análoga a las \'{e}picas del backlog:
 
 \begin{itemize}
-  \item \textbf{Exploración y validación de \textit{datasets} para modelos tradicionales}
+  \item \textbf{Selección de \textit{datasets} y técnicas de representación de audio}
     \begin{itemize}
-      \item \textbf{SPIKE1}
+      \item \textbf{Spike 1}
       \begin{itemize}
-        \item Se escribe un documento que incluye el análisis realizado de los \textit{datasets} públicos, y las representaciones de audio disponibles.
-      \item Se listan los \textit{datasets} seleccionados para el conjunto de características ${A, B, C, ...}$ y las razones de selección.
-        \item Se detalla el procesamiento necesario a realizar en los datos por cada uno de los \textit{dataset} seleccionados.
+        \item Se genera un documento que incluye los hallazgos de \textit{datasets} públicos, con ventajas y desventajas.
+        \item Se listan y detallan las representaciones de audio disponibles.
+        \item Se dispone de criterios de uso de los \textit{datasets} y representaciones de audio para el conjunto de características básicas.
       \end{itemize}
-      \item \textbf{SPIKE2}
+      \item \textbf{Spike 2}
       \begin{itemize}
-        \item Se edita el documento anterior con el objetivo de incluir el inventario de los datos del cliente, incluyendo la cantidad de audios y características.
+        \item Se extiende el documento anterior con otros \textit{datasets} específicos en el marco del aprendizaje profundo.
+        \item Se agregan las representaciones de audio disponibles en este marco.
+        \item Se añaden los criterios de uso de de los \textit{datasets} y representaciones de audio para los conjuntos de características perceptibles y de clasificación.
+      \end{itemize}      
+      \item \textbf{Spike 3}
+      \begin{itemize}
+        \item Se incluye un resumen del inventario de datos privados del cliente, audios y características.
         \item Se describe la calidad de los datos en términos de la consistencia de las características asignadas.
-        \item Se describen las razones que determinan la viabilidad de construir un \textit{dataset} propio.
+        \item Se describen las razones que determinan la viabilidad de construir y usar un \textit{dataset} propio.
+      \end{itemize}   
+    \end{itemize}
+
+  \item \textbf{Desarrollo de algoritmos y modelos tradicionales para características básicas, perceptibles y clasificables por ánimo y género}
+    \begin{itemize}
+      \item \textbf{HU 1, HU 5, HU 9 y HU 13}
+      \begin{itemize}
+        \item Se presenta un análisis exploratorio de datos con estadísticas descriptivas.
+        \item Se identifican las distribuciones y correlaciones de los datos según gráficos y visualizaciones.
+        \item El informe muestra el tratamiento de valores nulos o atípicos.
+        \item Se describen las categorías del problema de clasificación: Aplica en HU 9, HU 13, y para \textit{Key} y \textit{Mode} en HU 1.
+      \end{itemize}
+      \item \textbf{HU 2, HU 6, HU 10 y HU 14}
+      \begin{itemize}
+        \item Se realiza la normalización o estandarización de datos numéricos según aplique.
+        \item Se codifican variables categóricas con técnicas estándar (p. ej., \textit{one-hot encoding}) según aplique.
+        \item Se documentan los pasos de limpieza de datos y el tratamiento de valores faltantes.
+      \end{itemize}
+      \item \textbf{HU 3, HU 7, HU 11 y HU 15}
+      \begin{itemize}
+        \item En HU 3 se implementa al menos un modelo tradicional de aprendizaje supervisado, como máquinas de vectores de soporte (SVM), ärboles aleatorios (RF), o k vecinos cercanos (kNN).
+        \item Se ejecutan algoritmos tradicionales (sin IA) para comparar los resultados con los resultados del modelo tradicional. Aplica en el caso de HU 3.
+        \item En HU 7, HU 11 y HU 15, se implementa al menos un modelo de red neuronal.
+        \item Se documenta el proceso de selección de hiperparámetros, pruebas y resultados preliminares.
+      \end{itemize}
+      \item \textbf{HU 4, HU 8, HU 12 y HU 16}
+      \begin{itemize}
+        \item Se aplican métricas de desempeño (p. ej., \textit{accuracy}, \textit{F1}, \textit{RMSE} según el caso).
+        \item Se selecciona el mejor modelo o algoritmo por característica en función de estas métricas.
+        \item Se entrega reporte comparativo de modelos y algoritmos.
       \end{itemize}
     \end{itemize}
 
-  \item \textbf{Desarrollo y evaluación de modelos tradicionales}
+  \item \textbf{Implementación del  \textit{pipeline} de procesamiento}
     \begin{itemize}
-      \item \textbf{HU1 (Ejecución del ciclo de vida de IA para predicciones de la característica A)}
+      \item \textbf{HU 17 - opcional}
       \begin{itemize}
-        \item Se obtiene un \textit{dataset} depurado para la característica a partir de los documentos generados en los spikes, para la característica A.  
-        \item Se constata la aplicación de técnicas de feature engeenering. 
-        \item Se constata el entrenamiento de más de un modelo, según aplique.
-        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico (precisión, recall, F1 score, test speedup).
-        \item Se itera hasta obtener resultados aceptables. (70\% de F1, balance de precisión y recall, y el mejor speedup).
+        \item La interfaz permite subir archivos de audio en formato estándar (.mp3 o .wav).
+        \item Cada archivo se agrega a la cola de procesamiento.
+        \item El sistema devuelve confirmación de recepción.
       \end{itemize}
-      \item \textbf{HU2 (Ejecución del ciclo de vida de IA para la característica B)}
-      \begin{itemize}
-        \item Se obtiene un \textit{dataset} o se reutiliza un \textit{dataset} ya depurado a partir de los documentos generados en los spikes para la característica B.  
-        \item Se constata la aplicación de técnicas de feature engeenering. 
-        \item Se constata el entrenamiento de más de un modelo, según aplique.
-        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico (precisión, recall, F1 score, test speedup).
-        \item Se itera hasta obtener resultados aceptables. (70\% de F1, balance de precisión y recall, y el mejor speedup).
-      \end{itemize}
-      \item \textbf{HU3 (característica C)}
-      \begin{itemize}
-        \item Se obtiene un \textit{dataset} o se reutiliza un \textit{dataset} ya depurado a partir de los documentos generados en los spikes para la característica C.  
-        \item Se constata la aplicación de técnicas de feature engeenering. 
-        \item Se constata el entrenamiento de más de un modelo, según aplique.
-        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico (precisión, recall, F1 score, test speedup).
-        \item Se itera hasta obtener resultados aceptables. (70\% de F1, balance de precisión y recall, y el mejor speedup).
-      \end{itemize}
-      \item \textbf{.}
-      \item \textbf{.}
-      \item \textbf{.}
-    \end{itemize}
-
-  \item \textbf{Desarrollo y evaluación de modelos de aprendizaje profundo}
-    \begin{itemize}
-      \item \textbf{SPIKE3}
+      \item \textbf{HU 18}
         \begin{itemize}
-          \item Se edita el documento resultante del SPIKE1 incluyendo el análisis realizado de los \textit{datasets} públicos, y las representaciones de audio aplicables al aprendizaje profundo.
-          \item Se listan los \textit{datasets} seleccionados para el conjunto de características ${M+1, M+2, ...}$ y las razones de selección.
-          \item Se detalla el procesamiento necesario a realizar en los datos por cada uno de los \textit{dataset} seleccionados.
-          %representaciones usadas (MFCC, Mel-spectrogram, Chroma).
-        \end{itemize}
-      \item \textbf{HUM+1 (característica M+1)}
-      \begin{itemize}
-        \item Se obtiene un \textit{dataset} depurado para la característica a partir de los documentos generados en el SPIKE3 para la característica M+1.  
-        \item Se constata la aplicación de técnicas relacionadas con el \textcolor{red}{ciclo de vida del aprendizaje profundo}. 
-        \item Se constata el entrenamiento de más de un modelo de tipo CNN, RNN, Transformer o preentrenado, según aplique.
-        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico. \textcolor{red}{Revisar los conceptos de DL}.
-        \item Se itera hasta obtener resultados aceptables.
-        %EJ. El modelo alcanza al menos un 75% de F1 o una métrica definida por cliente.
-        %En DL se entrenan modelos con y sin transferencia de aprendizaje.
-        %Puede ser que los experimentos quedan registrados en scripts reproducibles.
-      \end{itemize}
-      \item \textbf{HUM+2 (característica M+2)}
-      \begin{itemize}
-        \item Se obtiene un \textit{dataset} depurado para la característica a partir de los documentos generados en el SPIKE3 para la característica M+2.  
-        \item Se constata la aplicación de técnicas relacionadas con el \textcolor{red}{ciclo de vida del aprendizaje profundo}. 
-        \item Se constata el entrenamiento de más de un modelo, según aplique.
-        \item Se entrega el mejor modelo resultante de la evaluación de las métricas aplicadas al caso específico. \textcolor{red}{Revisar los conceptos de DL}.
-        \item Se itera hasta obtener resultados aceptables.
-      \end{itemize}
-      \item \textbf{.}
-      \item \textbf{.}
-      \item \textbf{.}
-    \end{itemize}
-
-  \item \textbf{Implementación del pipeline de procesamiento y despliegue}
-    \begin{itemize}
-      \item \textbf{HUN+1 Opcional (interfaz de recepción)}
-      \begin{itemize}
-        \item La interfaz permite subir archivos de audio en formato estándar (\textcolor{red}{.mp3 o .wav}).
-        \item El archivo queda en una cola de procesamiento para el pipeline.
-        \item El sistema devuelve confirmación de recepción y ejecuta el pipeline por archivo.
-      \end{itemize}
-      \item \textbf{HUN+2 (pipeline de procesamiento)}
-        \begin{itemize}
-        \item El pipeline procesa automáticamente un archivo nuevo.
-        \item Se ejecutan los modelos entrenados y se asignan las características al audio.
+        \item El \textit{pipeline} procesa automáticamente un archivo nuevo.
+        \item Se ejecutan los modelos desarrollados.
         \item Los resultados se almacenan en la base de datos.
+        \item El sistema almacena estado y detalle asociado al archivo.
         \end{itemize}
-      \item \textbf{HUN+3 (despliegue en \textit{backend})}
+      \item \textbf{HU 19 - opcional}
       \begin{itemize}
-        \item El sistema está disponible en un entorno de prueba accesible por el cliente.
-        \item El backend permite ejecutar al menos (\textcolor{red}{x} archivos consecutivos sin fallo.
+        \item El sistema está disponible en un entorno de producción del cliente.
+        \item El \textit{backend} permite ejecutar al menos 10 archivos consecutivos sin fallo.
         \item La documentación de despliegue está disponible para reproducir la instalación.
       \end{itemize}
-      \item \textbf{HUN+4 (validación por usuario)}
+      \item \textbf{HU 20}
       \begin{itemize}
-        \item El usuario puede acceder para consultar las características de todas las canciones procesadas en la base de datos.
-        \item El usuario puede filtrar las características canción por canción.
-        \item El usuario puede verificar los resultados y reportar cualquier incidente al cliente y al desarrollador.
+        \item El usuario accede a la base de datos en modo lectura.
+        \item El usuario puede filtrar los resultados por canción.
+        \item El usuario puede validar y reportar cualquier incidente al cliente y al desarrollador.
       \end{itemize}
     \end{itemize}
 
@@ -515,125 +507,234 @@ Se definen los siguientes roles:
 \section{8. Fases de CRISP-DM}
 
 \begin{enumerate}
-  \item \textbf{Comprensión del negocio:} objetivo, valor agregado de IA, métricas de éxito.
-  \item \textbf{Comprensión de los datos:} tipo, origen, cantidad, calidad.
-  \item \textbf{Preparación de los datos:} características clave, transformaciones necesarias.
-  \item \textbf{Modelado:} tipo de problema, algoritmos posibles.
-  \item \textbf{Evaluación del modelo:} métricas de rendimiento.
-  \item \textbf{Despliegue del modelo (opcional):} tipo de despliegue y herramientas.
+  \item \textbf{Comprensión del negocio:} 
+  
+  Objetivo: minimizar dependencias de APIs externas mediante un módulo de IA propio que genere características musicales automáticamente.  
+  
+  Impacto: reducción de costos, autonomía tecnológica y optimización del flujo de ingestión de canciones.  
+  
+  Métricas: cobertura de características musicales, reducción de tiempo de respuesta en el \textit{pipeline} y satisfacción del cliente.
+  
+  \item \textbf{Comprensión de los datos:}
+  Tipos de datos: archivos de audio y características musicales tabulares.
+
+  Fuentes de datos: datos privados del cliente y \textit{datasets} públicos (p. ej., \textit{GTZAN}, \textit{Million Song Dataset}).
+
+  Cantidad de datos: aproximadamente 65,000 canciones con características asignadas, más la información pública disponible.
+
+  Calidad de los datos: datos revisados por músicos, sujetos a EDA.
+
+  \item \textbf{Preparación de los datos:}
+
+  Transformaciones necesarias: se transforman los audios en representaciones numéricas como \textit{MFCC}. Normalización, segmentación de señales, y construcción de \textit{datasets} balanceados.
+
+  Características clave: \textit{chroma features} para características básicas, y espectrogramas para perceptibles y clasificables.
+
+  \item \textbf{Modelado:} 
+
+  Tipo de problema: clasificación y regresión para características básicas, regresión para características perceptibles y clasificación multi-clase para características clasificables por ánimo y género.
+
+  Arquitecturas posibles:
+  \begin{itemize}
+    \item Modelos tradicionales para características básicas (SVM, RF, kNN).
+    \item Algoritmos de procesamiento de señales (DSP) para características básicas.
+    \item Modelos de aprendizaje profundo como redes neuronales convolucionales (CNN),  redes neuronales recurrentes (RNN), \textit{Transformers} y modelos preentrenados, para las características perceptibles, ánimo y género.
+  \end{itemize}
+  Se ejecuta un ciclo iterativo de experimentación con validación cruzada, comparación de arquitecturas y ajuste de hiperparámetros.
+
+  \item \textbf{Evaluación del modelo:}
+
+  Métricas de evaluación: \textit{F1-score}, \textit{AUC-ROC} para evaluar la capacidad del modelo de clasificación de características. \textit{RMSE} y \textit{MAE} para regresión.
+
+  \item \textbf{Despliegue del modelo (opcional):} 
+  
+  No se contempla como parte del alcance.
 \end{enumerate}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-A partir de cada Historia de Usuario (HU) definida en la sección 6, descomponer el trabajo en tareas técnicas concretas, medibles y acotadas en el tiempo.
+%A partir de cada Historia de Usuario (HU) definida en la sección 6, descomponer el trabajo en tareas técnicas concretas, medibles y acotadas en el tiempo.
 
-\begin{itemize}
-\item Seleccionar entre 2 y 3 tareas por cada historia de usuario.
-\item Cada tarea debe estar claramente formulada, ser técnica, accionable y con una estimación horaria entre 2 y 8 horas.
-\item Evitar tareas genéricas (como ''desarrollar funcionalidad´´) o demasiado amplias.
-\item Si una tarea supera las 8 horas, debe dividirse en subtareas.
-\item Indicar la prioridad relativa de cada tarea (Alta, Media o Baja).
-\end{itemize}
+%\begin{itemize}
+%\item Seleccionar entre 2 y 3 tareas por cada historia de usuario.
+%\item Cada tarea debe estar claramente formulada, ser técnica, accionable y con una estimación horaria entre 2 y 8 horas.
+%\item Evitar tareas genéricas (como ''desarrollar funcionalidad´´) o demasiado amplias.
+%\item Si una tarea supera las 8 horas, debe dividirse en subtareas.
+%\item Indicar la prioridad relativa de cada tarea (Alta, Media o Baja).
+%\end{itemize}
 
 \begin{table}[htpb]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|X|c|c|@{}}
+\begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0}
-Historia de usuario & Tarea técnica & Estimación & Prioridad \\ \hline
-HU1 & Tarea 1 HU1 & 6 h & Alta \\ \hline
-HU1 & Tarea 2 HU1 & 8 h & Alta \\ \hline
-HU2 & Tarea 1 HU2 & 5 h & Media \\ \hline
-HU2 & Tarea 2 HU2 & 6 h & Alta \\ \hline
-... & ... & ... & ... \\ \hline
+HU & Tarea técnica & Estimación & Prioridad \\ \hline
+HU1 & Generar visualizaciones de las distribuciones para características básicas & 5 h & Alta \\ \hline
+HU1 & Identificar patrones, anomalías y faltantes para las características básicas & 6 h & Alta \\ \hline
+
+HU2 & Implementar normalización y estandarización de variables numéricas & 6 h & Alta \\ \hline
+HU2 & Codificar variables categóricas (ej., \textit{one-hot encoding}) & 5 h & Media \\ \hline
+
+HU3 & Implementar modelos SVM, RF para predicción de características básicas & 7 h & Alta \\ \hline
+HU3 & Implementar algoritmos DSP para generar características básicas & 6 h & Media \\ \hline
+
+HU4 & Calcular métricas de desempeño (\textit{accuracy}, \textit{F1}, \textit{RMSE}) & 5 h & Alta \\ \hline
+HU4 & Elaborar reporte comparativo de modelos y algoritmos & 4 h & Media \\ \hline
+
+HU5 & Aplicar técnicas de visualización e interpretar los resultados obtenidos para características perceptibles & 5 h & Alta \\ \hline
+HU5 & Identificar patrones generales, anomalías, faltantes y correlaciones para las características perceptibles & 6 h & Alta \\ \hline
+
+HU6 & Generar espectrogramas y normalizar audios & 7 h & Alta \\ \hline
+HU6 & Implementar \textit{data augmentation} para ampliar \textit{dataset} & 6 h & Media \\ \hline
+
+HU7 & Definir arquitectura de red neuronal multi-salida & 8 h & Alta \\ \hline
+HU7 & Entrenar modelo inicial y guardar pesos & 7 h & Alta \\ \hline
+
+HU8 & Evaluar desempeño del modelo con métricas apropiadas & 5 h & Alta \\ \hline
+HU8 & Documentar resultados de evaluación y ajustes realizados & 4 h & Media \\ \hline
+
+HU9 & EDA de distribución de \textit{moods} (categorías principales/secundarias) & 5 h & Alta \\ \hline
+HU9 & Generar gráficos de dispersión y matrices de correlación & 4 h & Media \\ \hline
+
+HU10 & Preparar \textit{dataset} de entrenamiento para clasificación de \textit{moods} & 6 h & Alta \\ \hline
+HU10 & Codificar etiquetas multi-clase y balancear \textit{dataset} & 5 h & Alta \\ \hline
+
+HU11 & Diseñar y entrenar red neuronal para predicción de \textit{moods} & 8 h & Alta \\ \hline
+HU11 & Ajustar hiperparámetros iniciales (tasa de aprendizaje, épocas) & 6 h & Media \\ \hline
+
+HU12 & Evaluar el modelo con métricas multi-clase (\textit{F1}) & 5 h & Alta \\ \hline
+HU12 & Elaborar informe comparativo de experimentos realizados & 4 h & Media \\ \hline
+
+HU13 & EDA de distribución de géneros y subgéneros musicales & 5 h & Alta \\ \hline
+HU13 & Generar reportes visuales de categorías de género & 4 h & Media \\ \hline
+
+HU14 & Preparar \textit{dataset} para clasificación de género y subgénero & 6 h & Alta \\ \hline
+HU14 & Aplicar técnicas de balanceo para clases poco representadas & 5 h & Alta \\ \hline
+
+HU15 & Diseñar y entrenar red neuronal multi-salida para géneros & 8 h & Alta \\ \hline
+HU15 & Comparar desempeño de diferentes arquitecturas (\textit{CNN}, \textit{RNN}) & 7 h & Media \\ \hline
+
+HU16 & Evaluar métricas de desempeño en clasificación multi-clase & 5 h & Alta \\ \hline
+HU16 & Documentar resultados y selección del mejor modelo & 4 h & Media \\ \hline
+
 \end{tabularx}
 \end{table}
 
-\textbf{Criterios para estimar tiempos:}
-\begin{itemize}
-  \item Considerar la complejidad técnica, el nivel de incertidumbre y la experiencia previa.
-  \item Evitar subestimar el esfuerzo: estimar el tiempo realista que llevaría implementar, testear y documentar cada tarea.
-  \item Basar la estimación en la experiencia propia o en referencias de tareas similares.
-\end{itemize}
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+HU & Tarea técnica & Estimación & Prioridad \\ \hline
 
-\textbf{Sobre la prioridad:}
-\begin{itemize}
-  \item Asignar una prioridad relativa (Alta, Media o Baja) según la relevancia funcional de la tarea y su impacto en los entregables.
-  \item Priorizar tareas que estén vinculadas a criterios de aceptación de las HU o que sean necesarias para desbloquear otras.
-  \item Incluir tareas opcionales solo si están bien justificadas.
-\end{itemize}
+HU18 & Diseñar e implementar \textit{pipeline} que integre modelos desarrollados & 8 h & Alta \\ \hline
+HU18 & Configurar base de datos para almacenamiento automático de resultados & 6 h & Alta \\ \hline
 
-\textbf{Recomendaciones generales:}
-\begin{itemize}
-  \item -Enfocarse en tareas que surgen directamente de las HU planteadas.
-  \item No es necesario cubrir las 600 horas del proyecto en esta sección: el foco está en el desglose de funcionalidades clave.
-  \item Este trabajo será la base para organizar algunos de los sprints y elaborar el cronograma del proyecto, por lo que debe ser claro y realista.
-\end{itemize}
+HU20 & Crear consultas de solo lectura para validación de resultados & 5 h & Alta \\ \hline
+HU20 & Implementar filtros de búsqueda por canción en la base de datos & 6 h & Media \\ \hline
+\end{tabularx}
+\end{table}
+
+%\textbf{Criterios para estimar tiempos:}
+%\begin{itemize}
+%  \item Considerar la complejidad técnica, el nivel de incertidumbre y la experiencia previa.
+%  \item Evitar subestimar el esfuerzo: estimar el tiempo realista que llevaría implementar, testear y documentar cada tarea.
+%  \item Basar la estimación en la experiencia propia o en referencias de tareas similares.
+%\end{itemize}
+
+%\textbf{Sobre la prioridad:}
+%\begin{itemize}
+%  \item Asignar una prioridad relativa (Alta, Media o Baja) según la relevancia funcional de la tarea y su impacto en los entregables.
+%  \item Priorizar tareas que estén vinculadas a criterios de aceptación de las HU o que sean necesarias para desbloquear otras.
+%  \item Incluir tareas opcionales solo si están bien justificadas.
+%\end{itemize}
+
+%\textbf{Recomendaciones generales:}
+%\begin{itemize}
+%  \item -Enfocarse en tareas que surgen directamente de las HU planteadas.
+%  \item No es necesario cubrir las 600 horas del proyecto en esta sección: el foco está en el desglose de funcionalidades clave.
+%  \item Este trabajo será la base para organizar algunos de los sprints y elaborar el cronograma del proyecto, por lo que debe ser claro y realista.
+%\end{itemize}
 
 \section{10. Planificación de Sprints}
 
-Organizar las tareas técnicas del proyecto en sprints de trabajo que permitan distribuir de forma equilibrada la carga horaria total, estimada en 600 horas.
+%Organizar las tareas técnicas del proyecto en sprints de trabajo que permitan distribuir de forma equilibrada la carga horaria total, estimada en 600 horas.
 
-\textbf{Consigna:}
-\begin{itemize}
-  \item Completar una tabla que relacione sprints con HU y tareas técnicas correspondientes.
-  \item Incluir estimación en horas para cada tarea.
-  \item Indicar responsable y porcentaje de avance estimado o completado.
-  \item Contemplar también tareas de planificación, documentación, redacción de memoria y preparación de defensa.
-\end{itemize}
+%\textbf{Consigna:}
+%\begin{itemize}
+%  \item Completar una tabla que relacione sprints con HU y tareas técnicas correspondientes.
+%  \item Incluir estimación en horas para cada tarea.
+%  \item Indicar responsable y porcentaje de avance estimado o completado.
+%  \item Contemplar también tareas de planificación, documentación, redacción de memoria y preparación de defensa.
+%\end{itemize}
 
-\textbf{Conceptos clave:}
-\begin{itemize}
-  \item Una \'{e}pica es una unidad funcional amplia; una historia de usuario es una funcionalidad concreta; un sprint es una unidad de tiempo donde se ejecutan tareas.
-  \item Las tareas son el nivel más desagregado: permiten estimar tiempos, asignar responsables y monitorear progreso.
-\end{itemize}
+%\textbf{Conceptos clave:}
+%\begin{itemize}
+%  \item Una \'{e}pica es una unidad funcional amplia; una historia de usuario es una funcionalidad concreta; un sprint es una unidad de tiempo donde se ejecutan tareas.
+%  \item Las tareas son el nivel más desagregado: permiten estimar tiempos, asignar responsables y monitorear progreso.
+%\end{itemize}
 
-\textbf{Duración sugerida:}
-\begin{itemize}
-  \item Para un proyecto de 600 h, se recomienda planificar entre 10 y 12 sprints de aproximadamente 2 semanas cada uno.
-  \item Asignar entre 45 y 50 horas efectivas por sprint a tareas técnicas.
-  \item Reservar 100 a 120 h para actividades no técnicas (planificación, escritura, reuniones, defensa).
-\end{itemize}
+%\textbf{Duración sugerida:}
+%\begin{itemize}
+%  \item Para un proyecto de 600 h, se recomienda planificar entre 10 y 12 sprints de aproximadamente 2 semanas cada uno.
+%  \item Asignar entre 45 y 50 horas efectivas por sprint a tareas técnicas.
+%  \item Reservar 100 a 120 h para actividades no técnicas (planificación, escritura, reuniones, defensa).
+%\end{itemize}
 
-\textbf{Importante:}
-\begin{itemize}
-  \item En proyectos individuales, el responsable suele ser el propio autor.
-  \item Aun así, desagregar tareas facilita el seguimiento y mejora continua.
-\end{itemize}
+%\textbf{Importante:}
+%\begin{itemize}
+%  \item En proyectos individuales, el responsable suele ser el propio autor.
+%  \item Aun así, desagregar tareas facilita el seguimiento y mejora continua.
+%\end{itemize}
 
-\textbf{Conversión opcional de Story Points a horas:}
-\begin{itemize}
-  \item 1 SP \(\approx\) 2 h como referencia flexible.
-  \item Tener en cuenta aproximaciones tipo Fibonacci.
-\end{itemize}
+%\textbf{Conversión opcional de Story Points a horas:}
+%\begin{itemize}
+%  \item 1 SP \(\approx\) 2 h como referencia flexible.
+%  \item Tener en cuenta aproximaciones tipo Fibonacci.
+%\end{itemize}
 
 \begin{table}[htpb]
 \centering
-\caption{Formato sugerido}
+%\caption{Formato sugerido}
 \begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0}
 Sprint & HU o fase & Tarea & Horas / SP & Responsable & \% Completado \\ \hline
-Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & Alumno & 100\% \\ \hline
-Sprint 0 & Planificación & Reunión con el tutor/cliente & 5 h & Alumno & 50\% \\ \hline
-Sprint 0 & Planificación & Ajuste de los entregables & 6 h & Alumno & 25\% \\ \hline
-Sprint 1 & HU1 & Tarea 1 HU1 & 6 h / 3 SP & Alumno & 0\% \\ \hline
-Sprint 1 & HU1 & Tarea 2 HU1 & 10 h / 5 SP & Alumno & 0\% \\ \hline
-Sprint 2 & HU2 & Tarea 1 HU2 & 7 h / 5 SP & Alumno & 0\% \\ \hline
-... & ... & ... & ... & ... & ... \\ \hline
-Sprint 5 & Escritura & Redacción memoria & 50 h / 34 SP & Alumno & 0\% \\ \hline
-Sprint 6 & Defensa & Preparación de la exposición & 20 h / 13 SP & Alumno & 0\% \\ \hline
+%Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & Alumno & 100\% \\ \hline
+%Sprint 0 & Planificación & Reunión con el tutor/cliente & 5 h & Alumno & 50\% \\ \hline
+%Sprint 0 & Planificación & Ajuste de los entregables & 6 h & Alumno & 25\% \\ \hline
+%Sprint 1 & HU1 & Tarea 1 HU1 & 6 h / 3 SP & Alumno & 0\% \\ \hline
+%Sprint 1 & HU1 & Tarea 2 HU1 & 10 h / 5 SP & Alumno & 0\% \\ \hline
+%Sprint 2 & HU2 & Tarea 1 HU2 & 7 h / 5 SP & Alumno & 0\% \\ \hline
+%... & ... & ... & ... & ... & ... \\ \hline
+%Sprint 5 & Escritura & Redacción memoria & 50 h / 34 SP & Alumno & 0\% \\ \hline
+%Sprint 6 & Defensa & Preparación de la exposición & 20 h / 13 SP & Alumno & 0\% \\ \hline
+Sprint 0 & Planificación & Definir alcance, cronograma y backlog inicial & 15 h & Alumno & 100\% \\ \hline
+Sprint 0 & Planificación & Reuniones iniciales con tutor/cliente & 10 h & Alumno & 50\% \\ \hline
+Sprint 1 & Spike 1 – 3 & Selección de datasets y técnicas (EDA preliminar) & 30 h & Alumno & 0\% \\ \hline
+Sprint 2 & HU1 – HU2 & EDA + preparación de datos (características básicas) & 40 h & Alumno & 0\% \\ \hline
+Sprint 3 & HU3 – HU4 & Entrenamiento y evaluación de modelos tradicionales & 45 h & Alumno & 0\% \\ \hline
+Sprint 4 & HU5 – HU6 & EDA y preparación de datos (perceptibles) & 40 h & Alumno & 0\% \\ \hline
+Sprint 5 & HU7 – HU8 & Modelos profundos y métricas (perceptibles) & 45 h & Alumno & 0\% \\ \hline
+Sprint 6 & HU9 – HU10 & EDA + preparación de datos (ánimo) & 30 h & Alumno & 0\% \\ \hline
+Sprint 7 & HU11 – HU12 & Modelos profundos y métricas (ánimo) & 35 h & Alumno & 0\% \\ \hline
+Sprint 8 & HU13 – HU14 & EDA + preparación de datos (género) & 30 h & Alumno & 0\% \\ \hline
+Sprint 9 & HU15 – HU16 & Modelos profundos y métricas (género) & 35 h & Alumno & 0\% \\ \hline
+Sprint 10 & HU17 – HU20 & Pipeline, BD y pruebas de integración & 60 h & Alumno & 0\% \\ \hline
+Sprint 11 & Escritura & Redacción memoria y documentación técnica & 70 h & Alumno & 0\% \\ \hline
+Sprint 12 & Defensa & Preparación de exposición y ajustes finales & 45 h & Alumno & 0\% \\ \hline
+
 \end{tabularx}
 \end{table}
 
-\textbf{Recomendaciones:}
-\begin{itemize}
-  \item Verificar que la carga horaria por sprint sea equilibrada.
-  \item Usar sprints de 1 a 3 semanas, acordes al cronograma general.
-  \item Actualizar el \% completado durante el seguimiento del proyecto.
-  \item Considerar un sprint final exclusivo para pruebas, revisión y ajustes antes de la defensa.
-\end{itemize}
+%\textbf{Recomendaciones:}
+%\begin{itemize}
+%  \item Verificar que la carga horaria por sprint sea equilibrada.
+%  \item Usar sprints de 1 a 3 semanas, acordes al cronograma general.
+%  \item Actualizar el \% completado durante el seguimiento del proyecto.
+%  \item Considerar un sprint final exclusivo para pruebas, revisión y ajustes antes de la defensa.
+%\end{itemize}
 
 
 \section{11. Diagrama de Gantt (sprints)}
