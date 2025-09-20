@@ -19,7 +19,7 @@
 \autor{Ing. Carlos Alberto Rivas Araque}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Ing. Esp. Martín Moreyra}
+\director{Esp. Ing. Martín Moreyra}
 \pertenenciaDirector{GatekeeperX} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
@@ -322,73 +322,125 @@ Se definen los siguientes roles:
 	\item Cliente: es el encargado de verificar que el proyecto cumple con las especificaciones, y dar la aprobación final del sistema.
 \end{itemize}
 
-Épicas, historias de usuario (HU) y \textit{spikes}.
+Épicas, historias de usuario (HU) y \textit{spikes}:
+
+Se llevarán a cabo sprints de 2 semanas, y cada sprint tendrá una dedicación de aproximadamente 40 horas. Para la estimación del total de Story Points (SP) se usa la serie de Fibonacci. Se suman las ponderaciones de dificultad, complejidad e incertidumbre, y se aproxima al inmediato superior de la serie.
 
 \begin{itemize}
   \item \textbf{Selección de \textit{datasets} y técnicas de representación de audio}
     \begin{itemize}
-      \item \textbf{\textit{Spike} 1 (3 story points (SP), prioridad máxima):}
-      Como desarrollador de IA, quiero encontrar \textit{datasets} musicales públicos, y técnicas de representación de audio para ser usados en algoritmos y modelos tradicionales.
-      \item \textbf{\textit{Spike} 2 (2 SP, prioridad máxima):}
-      Como desarrollador de IA, quiero determinar cuales \textit{datasets} musicales públicos, y técnicas de representación de audio, se usarán para aprendizaje profundo.      
-      \item \textbf{\textit{Spike} 3 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero evaluar los datos del cliente, en términos de volumen y calidad, para determinar si es posible conformar un \textit{dataset} propio.
-
+      \item \textbf{\textit{Spike} 1:}
+      como desarrollador de IA, quiero encontrar \textit{datasets} musicales públicos, y técnicas de representación de audio para ser usados en algoritmos y modelos tradicionales.
+      
+      Prioridad máxima, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{\textit{Spike} 2:}
+      como desarrollador de IA, quiero determinar cuales \textit{datasets} musicales públicos, y técnicas de representación de audio, se usarán para aprendizaje profundo.      
+      
+      Prioridad máxima, 2 SP (complejidad: 1, dificultad: 1, incertidumbre: 0)
+      \item \textbf{\textit{Spike} 3:}
+      como desarrollador de IA, quiero evaluar los datos del cliente, en términos de volumen y calidad, para determinar si es posible conformar un \textit{dataset} propio.
+      
+      Prioridad alta, 2 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \vspace{2cm}
     \end{itemize}
+  \vspace{2cm}
   \item \textbf{Desarrollo de algoritmos y modelos tradicionales para características básicas}
     \begin{itemize}
-      \item \textbf{HU 1 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero realizar un análisis exploratorio de datos (EDA) de las característica básicas, para entender su distribución.
-      \item \textbf{HU 2 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero preparar los datos para que sean aptos para el modelado.
-      \item \textbf{HU 3 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar modelos tradicionales para predecir cada una de las características básicas.
-      \item \textbf{HU 4 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero evaluar los resultados del modelo con métricas apropiadas, para validar su calidad, y seleccionar el mejor.
+      \item \textbf{HU 1:}
+      como desarrollador de IA, quiero realizar un análisis exploratorio de datos (EDA) de las característica básicas, para entender su distribución.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 2:}
+      como desarrollador de IA, quiero preparar los datos para que sean aptos para el modelado.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 3:}
+      como desarrollador de IA, quiero entrenar modelos tradicionales para predecir cada una de las características básicas.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 4:}
+      como desarrollador de IA, quiero evaluar los resultados del modelo con métricas apropiadas, para validar su calidad, y seleccionar el mejor.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
     \end{itemize}
   \item \textbf{Desarrollo de modelos de aprendizaje profundo para características perceptibles}
     \begin{itemize}
-      \item \textbf{HU 5 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero realizar un EDA de los datos de las características perceptibles, para entender su distribución y correlaciones.
-      \item \textbf{HU 6 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero preparar los datos de audio para entrenar un modelo.
-      \item \textbf{HU 7 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir las características perceptibles.
-      \item \textbf{HU 8 (5 SP, prioridad alta):}
-      Como desarrollador de IA, quiero evaluar los resultados del modelo con métricas apropiadas para validar su desempeño.
+      \item \textbf{HU 5:}
+      como desarrollador de IA, quiero realizar un EDA de los datos de las características perceptibles, para entender su distribución y correlaciones.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 6:}
+      como desarrollador de IA, quiero preparar los datos de audio para entrenar un modelo.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 7:}
+      como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir las características perceptibles.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 8:}
+      como desarrollador de IA, quiero evaluar los resultados del modelo con métricas apropiadas para validar su desempeño.
+      
+      Prioridad alta, 5 SP (complejidad: 2, dificultad: 2, incertidumbre: 1)
+      
     \end{itemize}
   \item \textbf{Desarrollo de modelos de aprendizaje profundo para características clasificables por ánimo}
     \begin{itemize}
-      \item \textbf{HU 9 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero realizar un EDA de los datos de las características clasificables por ánimo, para analizar su distribución y categorías.
-      \item \textbf{HU 10 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero preparar los datos para el modelado de \textit{moods}.
-      \item \textbf{HU 11 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir \textit{primary} y \textit{secondary mood}.
-      \item \textbf{HU 12 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero evaluar el modelo con métricas de clasificación multi-clase para validar su desempeño.
+      \item \textbf{HU 9:}
+      como desarrollador de IA, quiero realizar un EDA de los datos de las características clasificables por ánimo, para analizar su distribución y categorías.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{HU 10:}
+      como desarrollador de IA, quiero preparar los datos para el modelado de \textit{moods}.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{HU 11:}
+      como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir \textit{primary} y \textit{secondary mood}.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{HU 12:}
+      como desarrollador de IA, quiero evaluar el modelo con métricas de clasificación multi-clase para validar su desempeño.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \vspace{2cm}
     \end{itemize}
+
   \item \textbf{Desarrollo de modelos de aprendizaje profundo para características clasificables por género}
     \begin{itemize}
-      \item \textbf{HU 13 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero realizar un EDA de los datos de géneros y subgéneros para entender su distribución y categorías.
-      \item \textbf{HU 14 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero preparar los datos para modelado de género.
-      \item \textbf{HU 15 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir el género y los subgéneros.
-      \item \textbf{HU 16 (3 SP, prioridad alta):}
-      Como desarrollador de IA, quiero evaluar los resultados del modelo con métricas de clasificación, para validar su desempeño.
+      \item \textbf{HU 13:}
+      como desarrollador de IA, quiero realizar un EDA de los datos de géneros y subgéneros para entender su distribución y categorías.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{HU 14:}
+      como desarrollador de IA, quiero preparar los datos para modelado de género.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{HU 15:}
+      como desarrollador de IA, quiero entrenar un modelo multi-salida de aprendizaje profundo para predecir el género y los subgéneros.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
+      \item \textbf{HU 16:}
+      como desarrollador de IA, quiero evaluar los resultados del modelo con métricas de clasificación, para validar su desempeño.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)
     \end{itemize}        
   \item \textbf{Implementación del  \textit{pipeline} de procesamiento}
     \begin{itemize}
-      \item \textbf{HU 17 Opcional (8 SP, prioridad baja):}
-      Como cliente, quiero una interfaz para la recepción de un nuevo archivo de audio, para alimentar el \textit{pipeline} que genere las características musicales.
-      \item \textbf{HU 18 (8 SP, prioridad media):}
-      Como cliente, quiero un  \textit{pipeline} que procese los modelos desarrollados para automatizar la generación de características musicales, y almacenar los resultados en una base de datos.
-      \item \textbf{HU 19 Opcional (13 SP, prioridad baja):}
-      Como cliente, quiero desplegar el sistema en el \textit{backend}, para automatizar la generación de características musicales del audio en producción.
-      \item \textbf{HU 20 (1 SP, prioridad alta):}
-      Como usuario, quiero tener acceso de lectura a la base de datos para validar la calidad de las características resultantes.
+      \item \textbf{HU 17 - opcional:}
+      como cliente, quiero una interfaz para la recepción de un nuevo archivo de audio, para alimentar el \textit{pipeline} que genere las características musicales.
+      
+      Prioridad baja, 8 SP (complejidad: 3, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 18:}
+      como cliente, quiero un \textit{pipeline} que procese los modelos desarrollados para automatizar la generación de características musicales, y almacenar los resultados en una base de datos.
+      
+      Prioridad media, 8 SP (complejidad: 3, dificultad: 2, incertidumbre: 1)
+      \item \textbf{HU 19 - opcional:}
+      como cliente, quiero desplegar el sistema en el \textit{backend}, para automatizar la generación de características musicales del audio en producción.
+      
+      Prioridad baja, 13 SP (complejidad: 5, dificultad: 3, incertidumbre: 1)
+      \item \textbf{HU 20:}
+      como usuario, quiero tener acceso de lectura a la base de datos para validar la calidad de las características resultantes.
+      
+      Prioridad alta, 3 SP (complejidad: 1, dificultad: 1, incertidumbre: 1)      
     \end{itemize}
 \end{itemize}
 
@@ -429,7 +481,7 @@ Se definen los siguientes roles:
       \begin{itemize}
         \item Se incluye un resumen del inventario de datos privados del cliente, audios y características.
         \item Se describe la calidad de los datos en términos de la consistencia de las características asignadas.
-        \item Se describen las razones que determinan la viabilidad de construir y usar un \textit{dataset} propio.
+        \item Se concluye si es viable construir y usar un \textit{dataset} propio.
       \end{itemize}   
     \end{itemize}
 
@@ -450,10 +502,10 @@ Se definen los siguientes roles:
       \end{itemize}
       \item \textbf{HU 3, HU 7, HU 11 y HU 15}
       \begin{itemize}
-        \item En HU 3 se implementa al menos un modelo tradicional de aprendizaje supervisado, como máquinas de vectores de soporte (SVM), ärboles aleatorios (RF), o k vecinos cercanos (kNN).
+        \item En HU 3 se implementa al menos un modelo tradicional de aprendizaje supervisado, como máquinas de vectores de soporte (SVM), árboles aleatorios (RF), o k vecinos cercanos (kNN).
         \item Se ejecutan algoritmos tradicionales (sin IA) para comparar los resultados con los resultados del modelo tradicional. Aplica en el caso de HU 3.
         \item En HU 7, HU 11 y HU 15, se implementa al menos un modelo de red neuronal.
-        \item Se documenta el proceso de selección de hiperparámetros, pruebas y resultados preliminares.
+        \item Se documenta el proceso de selección de hiperparámetros en un \textit{Jupyter noteobok}.
       \end{itemize}
       \item \textbf{HU 4, HU 8, HU 12 y HU 16}
       \begin{itemize}
@@ -470,6 +522,7 @@ Se definen los siguientes roles:
         \item La interfaz permite subir archivos de audio en formato estándar (.mp3 o .wav).
         \item Cada archivo se agrega a la cola de procesamiento.
         \item El sistema devuelve confirmación de recepción.
+        \vspace{2cm}
       \end{itemize}
       \item \textbf{HU 18}
         \begin{itemize}
@@ -507,7 +560,7 @@ Se definen los siguientes roles:
 \section{8. Fases de CRISP-DM}
 
 \begin{enumerate}
-  \item \textbf{Comprensión del negocio:} 
+  \item \textbf{Comprensión del negocio} 
   
   Objetivo: minimizar dependencias de APIs externas mediante un módulo de IA propio que genere características musicales automáticamente.  
   
@@ -515,7 +568,8 @@ Se definen los siguientes roles:
   
   Métricas: cobertura de características musicales, reducción de tiempo de respuesta en el \textit{pipeline} y satisfacción del cliente.
   
-  \item \textbf{Comprensión de los datos:}
+  \item \textbf{Comprensión de los datos}
+
   Tipos de datos: archivos de audio y características musicales tabulares.
 
   Fuentes de datos: datos privados del cliente y \textit{datasets} públicos (p. ej., \textit{GTZAN}, \textit{Million Song Dataset}).
@@ -524,13 +578,13 @@ Se definen los siguientes roles:
 
   Calidad de los datos: datos revisados por músicos, sujetos a EDA.
 
-  \item \textbf{Preparación de los datos:}
+  \item \textbf{Preparación de los datos}
 
   Transformaciones necesarias: se transforman los audios en representaciones numéricas como \textit{MFCC}. Normalización, segmentación de señales, y construcción de \textit{datasets} balanceados.
 
   Características clave: \textit{chroma features} para características básicas, y espectrogramas para perceptibles y clasificables.
-
-  \item \textbf{Modelado:} 
+  \vspace{3cm}
+  \item \textbf{Modelado}
 
   Tipo de problema: clasificación y regresión para características básicas, regresión para características perceptibles y clasificación multi-clase para características clasificables por ánimo y género.
 
@@ -542,11 +596,11 @@ Se definen los siguientes roles:
   \end{itemize}
   Se ejecuta un ciclo iterativo de experimentación con validación cruzada, comparación de arquitecturas y ajuste de hiperparámetros.
 
-  \item \textbf{Evaluación del modelo:}
+  \item \textbf{Evaluación del modelo}
 
   Métricas de evaluación: \textit{F1-score}, \textit{AUC-ROC} para evaluar la capacidad del modelo de clasificación de características. \textit{RMSE} y \textit{MAE} para regresión.
 
-  \item \textbf{Despliegue del modelo (opcional):} 
+  \item \textbf{Despliegue del modelo (opcional)} 
   
   No se contempla como parte del alcance.
 \end{enumerate}
@@ -576,12 +630,23 @@ HU1 & Identificar patrones, anomalías y faltantes para las características bá
 HU2 & Implementar normalización y estandarización de variables numéricas & 6 h & Alta \\ \hline
 HU2 & Codificar variables categóricas (ej., \textit{one-hot encoding}) & 5 h & Media \\ \hline
 
-HU3 & Implementar modelos SVM, RF para predicción de características básicas & 7 h & Alta \\ \hline
+HU3 & Implementar modelos SVM, RF, para predicción de características básicas & 7 h & Alta \\ \hline
 HU3 & Implementar algoritmos DSP para generar características básicas & 6 h & Media \\ \hline
 
 HU4 & Calcular métricas de desempeño (\textit{accuracy}, \textit{F1}, \textit{RMSE}) & 5 h & Alta \\ \hline
 HU4 & Elaborar reporte comparativo de modelos y algoritmos & 4 h & Media \\ \hline
 
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+HU & Tarea técnica & Estimación & Prioridad \\ \hline
 HU5 & Aplicar técnicas de visualización e interpretar los resultados obtenidos para características perceptibles & 5 h & Alta \\ \hline
 HU5 & Identificar patrones generales, anomalías, faltantes y correlaciones para las características perceptibles & 6 h & Alta \\ \hline
 
@@ -617,16 +682,6 @@ HU15 & Comparar desempeño de diferentes arquitecturas (CNN, RNN) & 7 h & Media 
 
 HU16 & Evaluar métricas de desempeño en clasificación multi-clase & 5 h & Alta \\ \hline
 HU16 & Documentar resultados y selección del mejor modelo & 4 h & Media \\ \hline
-
-\end{tabularx}
-\end{table}
-
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0}
-HU & Tarea técnica & Estimación & Prioridad \\ \hline
 
 HU18 & Diseñar e implementar \textit{pipeline} que integre modelos desarrollados & 8 h & Alta \\ \hline
 HU18 & Configurar base de datos para almacenamiento automático de resultados & 6 h & Alta \\ \hline
@@ -697,10 +752,10 @@ HU20 & Implementar filtros de búsqueda por canción en la base de datos & 6 h &
 \begin{table}[htpb]
 \centering
 %\caption{Formato sugerido}
-\begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
+\begin{tabularx}{\linewidth}{@{}|c|c|X|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0}
-Sprint & HU o fase & Tarea & Horas / SP & Responsable & \% Completado \\ \hline
+Sprint & HU o fase & Tarea & Horas / SP & Responsable & \% Avance \\ \hline
 %Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & Alumno & 100\% \\ \hline
 %Sprint 0 & Planificación & Reunión con el tutor/cliente & 5 h & Alumno & 50\% \\ \hline
 %Sprint 0 & Planificación & Ajuste de los entregables & 6 h & Alumno & 25\% \\ \hline
@@ -710,9 +765,9 @@ Sprint & HU o fase & Tarea & Horas / SP & Responsable & \% Completado \\ \hline
 %... & ... & ... & ... & ... & ... \\ \hline
 %Sprint 5 & Escritura & Redacción memoria & 50 h / 34 SP & Alumno & 0\% \\ \hline
 %Sprint 6 & Defensa & Preparación de la exposición & 20 h / 13 SP & Alumno & 0\% \\ \hline
-Sprint 0 & Planificación & Definir alcance, cronograma y \textit{backlog} inicial & 15 h & Alumno & 100\% \\ \hline
-Sprint 0 & Planificación & Reuniones iniciales con tutor/cliente & 10 h & Alumno & 50\% \\ \hline
-Sprint 1 & Spike 1 – 3 & Selección de datasets y técnicas (EDA preliminar) & 30 h & Alumno & 0\% \\ \hline
+Sprint 0 & Planificación & Definir alcance, cronograma y \textit{backlog} inicial & 15 h & Alumno & 75\% \\ \hline
+Sprint 0 & Planificación & Reuniones iniciales con tutor/cliente & 10 h & Alumno & 75\% \\ \hline
+Sprint 1 & Spike 1 – 3 & Selección de \textit{datasets} y técnicas (EDA preliminar) & 30 h & Alumno & 33\% \\ \hline
 Sprint 2 & HU1 – HU2 & EDA + preparación de datos (características básicas) & 40 h & Alumno & 0\% \\ \hline
 Sprint 3 & HU3 – HU4 & Entrenamiento y evaluación de modelos tradicionales & 45 h & Alumno & 0\% \\ \hline
 Sprint 4 & HU5 – HU6 & EDA y preparación de datos (perceptibles) & 40 h & Alumno & 0\% \\ \hline
@@ -724,7 +779,6 @@ Sprint 9 & HU15 – HU16 & Modelos profundos y métricas (género) & 35 h & Alum
 Sprint 10 & HU17 – HU20 & \textit{Pipeline}, BD y pruebas de integración & 60 h & Alumno & 0\% \\ \hline
 Sprint 11 & Escritura & Redacción memoria y documentación técnica & 70 h & Alumno & 0\% \\ \hline
 Sprint 12 & Defensa & Preparación de exposición y ajustes finales & 45 h & Alumno & 0\% \\ \hline
-
 \end{tabularx}
 \end{table}
 
@@ -735,56 +789,116 @@ Sprint 12 & Defensa & Preparación de exposición y ajustes finales & 45 h & Alu
 %  \item Actualizar el \% completado durante el seguimiento del proyecto.
 %  \item Considerar un sprint final exclusivo para pruebas, revisión y ajustes antes de la defensa.
 %\end{itemize}
+\newpage
 
 
 \section{11. Diagrama de Gantt (sprints)}
 \label{sec:gantt}
 
-Visualizar en un diagrama de Gantt la planificación temporal del proyecto, tomando como base los sprints definidos en la sección anterior. Debe contemplar todas las horas del proyecto.
+%Visualizar en un diagrama de Gantt la planificación temporal del proyecto, tomando como base los sprints definidos en la sección anterior. Debe contemplar todas las horas del proyecto.
 
-Consigna:
+%Consigna:
 
-\begin{itemize}
+%\begin{itemize}
 
-\item Elaborar un diagrama de Gantt que muestre la secuencia temporal de los sprints.
+%\item Elaborar un diagrama de Gantt que muestre la secuencia temporal de los sprints.
 
-\item Cada fila debe representar un sprint (con su número o nombre), y el eje horizontal debe indicar el tiempo (en semanas o fechas concretas).
+%\item Cada fila debe representar un sprint (con su número o nombre), y el eje horizontal debe indicar el tiempo (en semanas o fechas concretas).
 
-\item Las tareas técnicas derivadas de HU deben diferenciarse visualmente (por ejemplo, con un color distinto) de las tareas no técnicas (planificación, redacción, defensa).
+%\item Las tareas técnicas derivadas de HU deben diferenciarse visualmente (por ejemplo, con un color distinto) de las tareas no técnicas (planificación, redacción, defensa).
 
-\item Incluir todas las tareas estimadas en cada sprint.
-\end{itemize}
+%\item Incluir todas las tareas estimadas en cada sprint.
+%\end{itemize}
 
-Recomendaciones para el Gantt:
+%Recomendaciones para el Gantt:
 
-\begin{itemize}
+%\begin{itemize}
 
-	\item Podés usar herramientas gratuitas como TeamGantt, ClickUp, GanttProject, [Google Sheets], [Trello + Planyway], entre otras.
-	\item Ordená los sprints de forma cronológica, comenzando con Sprint 0 (planificación) y finalizando con el sprint de defensa.
-	\item Asegurate de reflejar la duración realista de cada sprint según tu disponibilidad y el cronograma general del posgrado.
-	\item Incluí hitos importantes: reuniones, entregas parciales, defensa.
-\end{itemize}
-
-
-Incluir una imagen legible del diagrama de Gantt. Si es muy ancho, presentar primero la tabla y luego el gráfico de barras.
+%	\item Podés usar herramientas gratuitas como TeamGantt, ClickUp, GanttProject, [Google Sheets], [Trello + Planyway], entre otras.%
+%	\item Ordená los sprints de forma cronológica, comenzando con Sprint 0 (planificación) y finalizando con el sprint de defensa.
+%	\item Asegurate de reflejar la duración realista de cada sprint según tu disponibilidad y el cronograma general del posgrado.
+%	\item Incluí hitos importantes: reuniones, entregas parciales, defensa.
+%\end{itemize}
 
 
+%Incluir una imagen legible del diagrama de Gantt. Si es muy ancho, presentar primero la tabla y luego el gráfico de barras.
 
+A continuación se puede observar el diagrama de Gantt. Este muestra gráficamente como se distribuirá el desarrollo de las historias de usuario a lo largo de los sprints. Las columnas representan las semanas del proyecto, y las filas, los sprints. Del sprint 1 al 9, los sprints tienen una duración de dos semanas, los demás son un poco más extensos (plan, \textit{pipeline}, ecritura y defensa).
+El diagrama se divide en dos para efectos de legibilidad. El primero muestra los sprints del 0 (plan) al 9, y el segundo, los sprints 10 al 12.
+
+\begin{figure}[htpb]
+\begin{flushleft}
+
+% First row
+\begin{minipage}{0.50\textwidth}
+%    \centering
+    \includegraphics[height=6cm]{./Figuras/Gantt-1.png}
+\end{minipage}%
+%\hfill
+\begin{minipage}{0.50\textwidth}
+%    \centering
+    \includegraphics[height=6cm]{./Figuras/Gantt-2.png}
+\end{minipage}%
+\caption{Gantt: hasta el sprint 9.}
+
+\vspace{0.5cm} % Space between rows
+
+% Second row
+\begin{minipage}{0.28\textwidth}
+%    \centering
+    \includegraphics[height=6cm]{./Figuras/Gantt-3.png}
+\end{minipage}%
+%\hfill
+\begin{minipage}{0.72\textwidth}
+%    \centering
+    \includegraphics[height=6cm]{./Figuras/Gantt-4.png}
+\end{minipage}%
+
+\caption{Gantt sprints 10 al 12.}
+\label{fig:diagBloques}
+\end{flushleft}
+\end{figure}
+
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=.65\textwidth]{./Figuras/Gantt-1.png}
+%\includegraphics[width=.65\textwidth]{./Figuras/Gantt-2.png}
+%\includegraphics[width=.65\textwidth]{./Figuras/Gantt-3.png}
+%\includegraphics[width=.65\textwidth]{./Figuras/Gantt-4.png}
+%\caption{Diagrama de Gantt.}
+%\label{fig:diagBloques}
+%\end{figure}
+
+\vspace{25px}
+%En la figura se puede observar un actor que provee los archivos de las canciones que son las entradas del sistema IA, donde se procesa cada canción para extraer sus características musicales. Las características son las salidas, y son almacenadas en una base de datos que alimenta el \textit{backend} de la aplicación. Ahora, en la figura 2, se muestra un diagrama de bloques más detallado del sistema IA. 
+
+\newpage
 \section{12. Normativa y cumplimiento de datos (gobernanza)}
 
-En esta sección se debe analizar si los datos utilizados en el proyecto están sujetos a normativas de protección de datos y privacidad, y en qué condiciones se pueden emplear.
+En este proyecto no se analizan ni se almacenan datos personales de individuos, por lo que no resulta aplicable la normativa de protección de datos personales (como el Reglamento General de Protección de Datos --GDPR-- en la Unión Europea o la Ley 25.326 en Argentina). En consecuencia, no es necesario recabar consentimiento explícito de usuarios finales, dado que no se involucra información sensible ni identificable.
 
-\textbf{Aspectos a considerar:}
+Los conjuntos de datos empleados provienen de dos tipos de fuentes:
 \begin{itemize}
-  \item Evaluar si los datos están regulados por normativas como GDPR, Ley 25.326 de Protección de Datos Personales en Argentina, HIPAA u otras según jurisdicción y temática.
-  \item Determinar si el uso de los datos requiere consentimiento explícito de los usuarios involucrados.
-  \item Indicar si existen restricciones legales, técnicas o contractuales sobre el uso, compartición o publicación de los datos.
-  \item Aclarar si los datos provienen de fuentes licenciadas, de acceso público o bajo algún tipo de autorización especial.
-  \item Analizar la viabilidad del proyecto desde el punto de vista legal y ético, considerando la gobernanza de los datos.
+  \item \textit{Datasets} públicos: disponibles abiertamente para fines de investigación y desarrollo, sin restricciones contractuales adicionales.
+  \item \textit{Dataset} privado del cliente: de propiedad exclusiva del cliente, autorizado para su uso en este proyecto académico. Para efectos de la evaluación del trabajo, se va a disponer de subconjuntos de datos o material de referencia compartible con el director y los jurados, preservando siempre los derechos de propiedad del cliente.
 \end{itemize}
 
-Este análisis es clave para garantizar el cumplimiento normativo y evitar conflictos legales durante el desarrollo y publicación del proyecto.
+Es importante aclarar que los archivos de audio contenidos en los \textit{datasets}, tanto públicos como privados, son propiedad intelectual de sus respectivos compositores e intérpretes. El proyecto no transfiere ni modifica esos derechos, limitándose al uso autorizado de copias digitales para fines de análisis técnico y académico.
 
+En términos de propiedad y derechos sobre los resultados del proyecto, estos corresponden de forma conjunta al cliente y al alumno, de acuerdo con los acuerdos establecidos. 
+
+En conclusión, el proyecto cumple con la normativa vigente en materia de gobernanza de datos, respeta los derechos de propiedad intelectual de terceros y establece claramente las condiciones de uso de los \textit{datasets} empleados, garantizando la viabilidad legal y ética de la investigación.
+%En esta sección se debe analizar si los datos utilizados en el proyecto están sujetos a normativas de protección de datos y privacidad, y en qué condiciones se pueden emplear.
+%\textbf{Aspectos a considerar:}
+%\begin{itemize}
+%  \item Evaluar si los datos están regulados por normativas como GDPR, Ley 25.326 de Protección de Datos Personales en Argentina, HIPAA u otras según jurisdicción y temática.
+%  \item Determinar si el uso de los datos requiere consentimiento explícito de los usuarios involucrados.
+%  \item Indicar si existen restricciones legales, técnicas o contractuales sobre el uso, compartición o publicación de los datos.
+%  \item Aclarar si los datos provienen de fuentes licenciadas, de acceso público o bajo algún tipo de autorización especial.
+%  \item Analizar la viabilidad del proyecto desde el punto de vista legal y ético, considerando la gobernanza de los datos.
+%\end{itemize}
+
+%Este análisis es clave para garantizar el cumplimiento normativo y evitar conflictos legales durante el desarrollo y publicación del proyecto.En este proyecto no se analizan ni se almacenan datos personales de individuos, por lo que no resulta aplicable la normativa de protección de datos personales (como el Reglamento General de Protección de Datos --GDPR-- en la Unión Europea o la Ley 25.326 en Argentina). En consecuencia, no es necesario recabar consentimiento explícito de usuarios finales, dado que no se involucra información sensible ni identificable.
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
